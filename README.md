@@ -1,3 +1,9 @@
+<div style="text-align: center">
+
+<img src="assets/Logo.png" alt="TEC-Toolkit Logo" width=10% />
+
+</div>
+
 # CPSWatch
 **Repository for the "CPSWatch" ontology.**
 
