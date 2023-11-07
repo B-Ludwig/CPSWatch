@@ -29,6 +29,6 @@ This space is administered by:
 [Helmut-Schmidt-University](https://www.hsu-hh.de/)  
 Hamburg, Germany  
 <bjoern.ludwig@hsu-hh.de>  
-GitHub: [nicholascar](https://github.com/B-Ludwig/)
-ORCID: [0000-0002-8742-7730](https://orcid.org/0009-0003-2548-8225)  
+GitHub: [bjoernludwig](https://github.com/B-Ludwig/)
+ORCID: [0009-0003-2548-8225](https://orcid.org/0009-0003-2548-8225)  
 
