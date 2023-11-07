@@ -26,7 +26,7 @@ This space is administered by:
 
 **Bjoern Ludwig**  
 *PhD Student*  
-[Helmut-Schmidt-University](https://www.hsu-hh.de/)  
+[Helmut-Schmidt-University](https://www.hsu-hh.de/en/)  
 Hamburg, Germany  
 <bjoern.ludwig@hsu-hh.de>  
 GitHub: [B-Ludwig](https://github.com/B-Ludwig/) 
