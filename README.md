@@ -32,3 +32,4 @@ Hamburg, Germany
 GitHub: [B-Ludwig](https://github.com/B-Ludwig/) 
 ORCID: [0009-0003-2548-8225](https://orcid.org/0009-0003-2548-8225)  
 
+[![DOI](https://zenodo.org/badge/705643881.svg)](https://zenodo.org/doi/10.5281/zenodo.10159969)
