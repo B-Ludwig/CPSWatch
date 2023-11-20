@@ -1,0 +1,160 @@
+format-version: 1.2
+data-version: 1.0.0
+remark: 1.0.0 release of the CPSWatch Ontology
+ontology: https://w3id.org/CPSWatch
+property_value: http://purl.org/dc/elements/1.1/description "This ontology defines a vocabulary for describing cyber physical systems for monitoring purpose. It contains two main concepts: CPSWatch#MonitoredSystem that is a top level description of a System that is modeled and CPSWatch#MonitoringSensor that is a top level description of a sensor used to monitor the CPSWatch#MonitoredSystem. " xsd:string
+property_value: http://purl.org/dc/elements/1.1/title "The Cyber Physical System Watch Ontology" xsd:string
+property_value: http://purl.org/dc/terms/abstract "Manufacturers and users want to monitore their cyber physical systems. In the Industry 4.0 this is done by observing data from sensors. The problem arises when looking at a system of systems, e.g. a production plant or a whole powertrain of a vessel. Multiple systems describe their data in multiple ways and create the problem of analysing these data together in one system. To tackle this problem and to make transferability of algorithms (ML methods) between different monitoring systems possible, the CPSWatch Ontology is defined to create a top level description of a CPS system. " xsd:string
+property_value: http://purl.org/dc/terms/created "November 19th, 2023" xsd:string
+property_value: http://purl.org/dc/terms/creator https://orcid.org/0009-0003-2548-8225
+property_value: http://purl.org/dc/terms/issued "November 19th, 2023" xsd:string
+property_value: http://purl.org/dc/terms/license https://creativecommons.org/licenses/by/4.0/
+property_value: http://purl.org/dc/terms/modified "November 19th, 2023" xsd:string
+property_value: http://purl.org/dc/terms/publisher "CPSWatch on Github" xsd:string
+property_value: http://purl.org/ontology/bibo/status "CPSWatch (stable)" xsd:string
+property_value: http://purl.org/vocab/vann/preferredNamespacePrefix "CPSWatch" xsd:string
+property_value: http://purl.org/vocab/vann/preferredNamespaceUri "https://w3id.org/CPSWatch#" xsd:string
+property_value: https://schema.org/image https://github.com/B-Ludwig/CPSWatch/blob/aa184a2003274995672a6dd3ca445b12a5286f52/assets/Logo.png
+property_value: https://schema.org/logo https://github.com/B-Ludwig/CPSWatch/blob/aa184a2003274995672a6dd3ca445b12a5286f52/assets/Logo.png
+property_value: owl:versionInfo "1.0.0" xsd:string
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<https://w3id.org/CPSWatch#ContinuousMonitoringSensor>))\nDeclaration(Class(<https://w3id.org/CPSWatch#CpsComponent>))\nDeclaration(Class(<https://w3id.org/CPSWatch#DiscreteStatus>))\nDeclaration(Class(<https://w3id.org/CPSWatch#EventMonitoringSensor>))\nDeclaration(Class(<https://w3id.org/CPSWatch#NumericObservation>))\nDeclaration(Class(<https://w3id.org/CPSWatch#Observation>))\nDeclaration(DataProperty(<http://www.w3.org/ns/sosa#hasSimpleResult>))\nDeclaration(DataProperty(<http://www.w3.org/ns/sosa#resultTime>))\nDeclaration(DataProperty(<https://w3id.org/CPSWatch#hasDeviationThreshold>))\nDeclaration(DataProperty(<https://w3id.org/CPSWatch#hasID>))\nDeclaration(DataProperty(<https://w3id.org/CPSWatch#hasSampleRate>))\nDeclaration(NamedIndividual(<https://w3id.org/CPSWatch#Closed>))\nDeclaration(NamedIndividual(<https://w3id.org/CPSWatch#Critical>))\nDeclaration(NamedIndividual(<https://w3id.org/CPSWatch#Error>))\nDeclaration(NamedIndividual(<https://w3id.org/CPSWatch#OK>))\nDeclaration(NamedIndividual(<https://w3id.org/CPSWatch#Off>))\nDeclaration(NamedIndividual(<https://w3id.org/CPSWatch#On>))\nDeclaration(NamedIndividual(<https://w3id.org/CPSWatch#Open>))\nDeclaration(NamedIndividual(<https://w3id.org/CPSWatch#ShuttingDown>))\nDeclaration(NamedIndividual(<https://w3id.org/CPSWatch#Starting>))\nDeclaration(AnnotationProperty(<http://www.w3.org/2008/05/skos#prefLabel>))\n############################\n#   Annotation Properties\n############################\n\n# Annotation Property: <http://www.w3.org/2008/05/skos#prefLabel> (<http://www.w3.org/2008/05/skos#prefLabel>)\n\nSubAnnotationPropertyOf(<http://www.w3.org/2008/05/skos#prefLabel> rdfs:label)\n\n\n############################\n#   Data Properties\n############################\n\n# Data Property: <http://www.w3.org/ns/sosa#hasSimpleResult> (<http://www.w3.org/ns/sosa#hasSimpleResult>)\n\nDataPropertyDomain(<http://www.w3.org/ns/sosa#hasSimpleResult> <https://w3id.org/CPSWatch#NumericObservation>)\n\n# Data Property: <http://www.w3.org/ns/sosa#resultTime> (<http://www.w3.org/ns/sosa#resultTime>)\n\nDataPropertyDomain(<http://www.w3.org/ns/sosa#resultTime> <https://w3id.org/CPSWatch#Observation>)\n\n# Data Property: <https://w3id.org/CPSWatch#hasDeviationThreshold> (<https://w3id.org/CPSWatch#hasDeviationThreshold>)\n\nDataPropertyDomain(<https://w3id.org/CPSWatch#hasDeviationThreshold> <https://w3id.org/CPSWatch#EventMonitoringSensor>)\nDataPropertyRange(<https://w3id.org/CPSWatch#hasDeviationThreshold> xsd:float)\n\n# Data Property: <https://w3id.org/CPSWatch#hasID> (<https://w3id.org/CPSWatch#hasID>)\n\nDataPropertyDomain(<https://w3id.org/CPSWatch#hasID> <https://w3id.org/CPSWatch#CpsComponent>)\nDataPropertyRange(<https://w3id.org/CPSWatch#hasID> xsd:unsignedInt)\n\n# Data Property: <https://w3id.org/CPSWatch#hasSampleRate> (<https://w3id.org/CPSWatch#hasSampleRate>)\n\nDataPropertyDomain(<https://w3id.org/CPSWatch#hasSampleRate> <https://w3id.org/CPSWatch#ContinuousMonitoringSensor>)\nDataPropertyRange(<https://w3id.org/CPSWatch#hasSampleRate> xsd:float)\n\n\n\n############################\n#   Classes\n############################\n\n# Class: <https://w3id.org/CPSWatch#CpsComponent> (<https://w3id.org/CPSWatch#CpsComponent>)\n\nSubClassOf(<https://w3id.org/CPSWatch#CpsComponent> DataExactCardinality(1 <https://w3id.org/CPSWatch#hasID>))\n\n# Class: <https://w3id.org/CPSWatch#DiscreteStatus> (<https://w3id.org/CPSWatch#DiscreteStatus>)\n\nEquivalentClasses(<https://w3id.org/CPSWatch#DiscreteStatus> ObjectOneOf(<https://w3id.org/CPSWatch#Closed> <https://w3id.org/CPSWatch#Critical> <https://w3id.org/CPSWatch#Error> <https://w3id.org/CPSWatch#OK> <https://w3id.org/CPSWatch#Off> <https://w3id.org/CPSWatch#On> <https://w3id.org/CPSWatch#Open> <https://w3id.org/CPSWatch#ShuttingDown> <https://w3id.org/CPSWatch#Starting>))\n\n\n\n)
+
+[Term]
+id: ContinuousMonitoringSensor
+name: ContinuousMonitoringSensor
+is_a: NumericMonitoringSensor ! NumericMonitoringSensor
+
+[Term]
+id: CpsComponent
+name: CpsComponent
+comment: A CPSWatch#CpsComponent component of a cyber phyisical system.
+
+[Term]
+id: DiscreteStatus
+
+[Term]
+id: EventMonitoringSensor
+name: EventMonitoringSensor
+is_a: NumericMonitoringSensor ! NumericMonitoringSensor
+
+[Term]
+id: MonitoredSystem
+name: MonitoredSystem
+comment: A CPSWatch#MonitoredSystem is a system that is monitored by CPSWatch#MonitoringSensor.
+is_a: CpsComponent ! CpsComponent
+
+[Term]
+id: MonitoringSensor
+name: MonitoringSensor
+comment: A CPSWatch#MonitoringSensor is a sensor used to monitor a CPSWatch#MonitoredSystem. It can be of type CPSWatch#ContinuousMonitoringSensor, CPSWatch#EventMonitoringSensor, CPSWatch#StatusMonitoringSensor.
+is_a: CpsComponent ! CpsComponent
+
+[Term]
+id: NumericMonitoringSensor
+name: NumericMonitoringSensor
+is_a: MonitoringSensor ! MonitoringSensor
+
+[Term]
+id: NumericObservation
+name: NumericObservation 
+comment: A CPSWatch#NumericObservation is an observation made by an CPSWatch#NumericMonitoringSensor.
+is_a: Observation ! Observation
+
+[Term]
+id: Observation
+name: Observation
+comment: A CPSWatch#Observation is the parent class of CPSWatch#NumericObservation and CPSWatch#StatusObservation that describe the observation made by a CPSWatch#ContinuousMonitoringSensor, CPSWatch#EventMonitoringSensor, or CPSWatch#StatusMonitoringSensor.
+relationship: http://www.w3.org/ns/sosa/madeBySensor MonitoringSensor {cardinality="1"} ! MonitoringSensor
+
+[Term]
+id: StatusMonitoringSensor
+name: StatusMonitoringSensor
+is_a: MonitoringSensor ! MonitoringSensor
+
+[Term]
+id: StatusObservation
+name: StatusObservation 
+comment: A CPSWatch#StatusObservation is an observation made by an CPSWatch#StatusMonitoringSensor monitoring sensor.
+is_a: Observation ! Observation
+
+[Typedef]
+id: hasDiscreteStatus
+name: hasDiscreteStatus
+comment: The Status of the observations of a CPSWatch#StatusMonitoringSensor.
+property_value: owl:cardinality "1" xsd:nonNegativeInteger
+domain: StatusObservation ! StatusObservation
+range: DiscreteStatus
+
+[Typedef]
+id: hasInfluence
+name: hasInfluence
+comment: Connection between two CPSWatch:MonitoringSensor to state that the observations of these sensors are connected.
+domain: MonitoringSensor ! MonitoringSensor
+range: MonitoringSensor ! MonitoringSensor
+
+[Typedef]
+id: hasMonitoringSensor
+name: hasMonitoringSensor
+comment: Connection from a CPSWatch:MonitoredSystem to a CPSWatch#MonitoringSensor
+domain: MonitoredSystem ! MonitoredSystem
+range: MonitoringSensor ! MonitoringSensor
+
+[Typedef]
+id: hasNegativeCorrelation
+name: hasNegativeCorrelation
+comment: Connection between two CPSWatch:MonitoringSensor to state that the observations of these sensors are with a negative correlation.
+domain: MonitoringSensor ! MonitoringSensor
+range: MonitoringSensor ! MonitoringSensor
+is_a: hasInfluence ! hasInfluence
+
+[Typedef]
+id: hasPositiveCorrelation
+name: hasPositiveCorrelation
+comment: Connection between two CPSWatch:MonitoringSensor to state that the observations of these sensors are with a positive correlation.
+domain: MonitoringSensor ! MonitoringSensor
+range: MonitoringSensor ! MonitoringSensor
+is_a: hasInfluence ! hasInfluence
+
+[Typedef]
+id: hasStates
+name: hasStates
+comment: The possible states that a CPSWatch#StatusMonitoringSensor can have.
+domain: StatusMonitoringSensor ! StatusMonitoringSensor
+range: DiscreteStatus
+
+[Typedef]
+id: hasSubSystem
+name: hasSubSystem
+comment: Connection between two CPSWatch:MonitoredSystem to state that a CPSWatch:MonitoredSystem has a sub system.
+domain: MonitoredSystem ! MonitoredSystem
+range: MonitoredSystem ! MonitoredSystem
+
+[Typedef]
+id: hasSystemConnection
+name: hasSystemConnection
+comment: Connection between two CPSWatch:MonitoredSystem to state that system B is dependent on system A, e.g. CPSWatch:MonitoredSystem A hasSystemConnection CPSWatch:MonitoredSystem B.
+domain: MonitoredSystem ! MonitoredSystem
+range: MonitoredSystem ! MonitoredSystem
+is_a: hasSystemConnection ! hasSystemConnection
+
+[Typedef]
+id: hasUnit
+name: hasUnit
+comment: The unit the observations of a CPSWatch#ContinuousMonitoringSensor or CPSWatch#EventMonitoringSensor monitoring sensor are made in.
+property_value: owl:cardinality "1" xsd:nonNegativeInteger
+domain: NumericMonitoringSensor ! NumericMonitoringSensor
+range: QuantityValue
+
+[Typedef]
+id: http://purl.org/dc/elements/1.1/publisher
+name: publisher
+comment: An entity responsible for making the resource available.
+property_value: isDefinedBy http://purl.org/dc/elements/1.1/
+
+[Typedef]
+id: http://www.w3.org/ns/sosa/madeBySensor
+name: madeBySensor
+comment: Connection between a CPSWatch#Observation and a CPSWatch#MonitoringSensor. 
+domain: Observation ! Observation
+range: MonitoringSensor ! MonitoringSensor
+
