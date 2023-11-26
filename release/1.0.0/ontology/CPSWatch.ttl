@@ -1,0 +1,460 @@
+@prefix : <https://w3id.org/CPSWatch#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix schema: <https://schema.org/> .
+@base <https://w3id.org/CPSWatch#> .
+
+<https://w3id.org/CPSWatch> rdf:type owl:Ontology ;
+                             owl:versionIRI <https://w3id.org/CPSWatch/> ;
+                             dc:description "This ontology defines a vocabulary for describing cyber physical systems for monitoring purpose. It contains two main concepts: CPSWatch#MonitoredSystem that is a top level description of a System that is modeled and CPSWatch#MonitoringSensor that is a top level description of a sensor used to monitor the CPSWatch#MonitoredSystem. "@en ;
+                             dc:title "The Cyber Physical System Watch Ontology"@en ;
+                             terms:abstract "Manufacturers and users want to monitore their cyber physical systems. In the Industry 4.0 this is done by observing data from sensors. The problem arises when looking at a system of systems, e.g. a production plant or a whole powertrain of a vessel. Multiple systems describe their data in multiple ways and create the problem of analysing these data together in one system. To tackle this problem and to make transferability of algorithms (ML methods) between different monitoring systems possible, the CPSWatch Ontology is defined to create a top level description of a CPS system. "@en ;
+                             terms:created "November 21st 2023"@en ;
+                             terms:creator <https://orcid.org/0009-0003-2548-8225> ;
+                             terms:issued "November 21st, 2023"@en ;
+                             terms:license <https://creativecommons.org/licenses/by/4.0/> ;
+                             terms:modified "November 21st, 2023"@en ;
+                             terms:publisher "CPSWatch on Github"@en ;
+                             bibo:status "CPSWatch (stable)"@en ;
+                             vann:preferredNamespacePrefix "CPSWatch"@en ;
+                             vann:preferredNamespaceUri "https://w3id.org/CPSWatch#" ;
+                             rdfs:comment "1.0.0 release of the CPSWatch Ontology"@en ;
+                             owl:versionInfo "1.0.0"@en ;
+                             schema:image <https://github.com/B-Ludwig/CPSWatch/blob/aa184a2003274995672a6dd3ca445b12a5286f52/assets/Logo.png> ;
+                             schema:logo <https://github.com/B-Ludwig/CPSWatch/blob/aa184a2003274995672a6dd3ca445b12a5286f52/assets/Logo.png> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/description
+dc:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/abstract
+terms:abstract rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/created
+terms:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+terms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+terms:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/issued
+terms:issued rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+terms:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+terms:modified rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+terms:publisher rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/ontology/bibo/status
+bibo:status rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#cardinality
+owl:cardinality rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2008/05/skos#prefLabel
+<http://www.w3.org/2008/05/skos#prefLabel> rdf:type owl:AnnotationProperty ;
+                                           rdfs:subPropertyOf rdfs:label .
+
+
+###  http://www.w3.org/ns/org#memberOf
+org:memberOf rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/homepage
+foaf:homepage rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/name
+foaf:name rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/image
+schema:image rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/includedInDataCatalog
+schema:includedInDataCatalog rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/logo
+schema:logo rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/publisher
+dc:publisher rdf:type owl:ObjectProperty ;
+             rdfs:comment "An entity responsible for making the resource available."@en ;
+             rdfs:isDefinedBy dc: ;
+             rdfs:label "publisher"@en .
+
+
+###  http://www.w3.org/ns/sosa/madeBySensor
+<http://www.w3.org/ns/sosa/madeBySensor> rdf:type owl:ObjectProperty ;
+                                         rdfs:domain :Observation ;
+                                         rdfs:range :MonitoringSensor ;
+                                         rdfs:comment "Connection between a CPSWatch#Observation and a CPSWatch#MonitoringSensor. "@en ;
+                                         rdfs:label "madeBySensor"@en .
+
+
+###  http://www.w3.org/ns/sosa/observes
+<http://www.w3.org/ns/sosa/observes> rdf:type owl:ObjectProperty ;
+                                     rdfs:domain :MonitoringSensor ;
+                                     rdfs:range <http://www.w3.org/ns/sosa/ObservableProperty> ;
+                                     rdfs:comment "Connection between a CPSWatch#MonitoringSensor and a sosa#ObservableProperty. "@en ;
+                                     rdfs:label "observes"@en .
+
+
+###  https://w3id.org/CPSWatch#hasInfluence
+:hasInfluence rdf:type owl:ObjectProperty ;
+              rdfs:domain :MonitoringSensor ;
+              rdfs:range :MonitoringSensor ;
+              rdfs:comment "Connection between two CPSWatch:MonitoringSensor to state that the observations of these sensors are connected."@en ;
+              rdfs:label "hasInfluence"@en .
+
+
+###  https://w3id.org/CPSWatch#hasMonitoringSensor
+:hasMonitoringSensor rdf:type owl:ObjectProperty ;
+                     rdfs:domain :MonitoredSystem ;
+                     rdfs:range :MonitoringSensor ;
+                     rdfs:comment "Connection from a CPSWatch:MonitoredSystem to a CPSWatch#MonitoringSensor"@en ;
+                     rdfs:label "hasMonitoringSensor"@en .
+
+
+###  https://w3id.org/CPSWatch#hasNegativeCorrelation
+:hasNegativeCorrelation rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf :hasInfluence ;
+                        rdfs:domain :MonitoringSensor ;
+                        rdfs:range :MonitoringSensor ;
+                        rdfs:comment "Connection between two CPSWatch:MonitoringSensor to state that the observations of these sensors are with a negative correlation."@en ;
+                        rdfs:label "hasNegativeCorrelation"@en .
+
+
+###  https://w3id.org/CPSWatch#hasPositiveCorrelation
+:hasPositiveCorrelation rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf :hasInfluence ;
+                        rdfs:domain :MonitoringSensor ;
+                        rdfs:range :MonitoringSensor ;
+                        rdfs:comment "Connection between two CPSWatch:MonitoringSensor to state that the observations of these sensors are with a positive correlation."@en ;
+                        rdfs:label "hasPositiveCorrelation"@en .
+
+
+###  https://w3id.org/CPSWatch#hasStates
+:hasStates rdf:type owl:ObjectProperty ;
+           rdfs:domain :StatusMonitoringSensor ;
+           rdfs:range :Status ;
+           rdfs:comment "The possible states that a CPSWatch#StatusMonitoringSensor can have." ;
+           rdfs:label "hasStates" .
+
+
+###  https://w3id.org/CPSWatch#hasStatus
+:hasStatus rdf:type owl:ObjectProperty ;
+           rdfs:domain :StatusObservation ;
+           rdfs:range :Status ;
+           rdfs:comment "The Status of the observations of a CPSWatch#StatusMonitoringSensor." ;
+           rdfs:label "hasStatus" ;
+           owl:cardinality "1"^^xsd:nonNegativeInteger .
+
+
+###  https://w3id.org/CPSWatch#hasSubSystem
+:hasSubSystem rdf:type owl:ObjectProperty ;
+              rdfs:domain :MonitoredSystem ;
+              rdfs:range :MonitoredSystem ;
+              rdfs:comment "Connection between two CPSWatch:MonitoredSystem to state that a CPSWatch:MonitoredSystem has a sub system."@en ;
+              rdfs:label "hasSubSystem"@en .
+
+
+###  https://w3id.org/CPSWatch#hasSystemConnection
+:hasSystemConnection rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :hasSystemConnection ;
+                     rdfs:domain :MonitoredSystem ;
+                     rdfs:range :MonitoredSystem ;
+                     rdfs:comment "Connection between two CPSWatch:MonitoredSystem to state that system B is dependent on system A, e.g. CPSWatch:MonitoredSystem A hasSystemConnection CPSWatch:MonitoredSystem B."@en ;
+                     rdfs:label "hasSystemConnection"@en .
+
+
+###  https://w3id.org/CPSWatch#hasUnit
+:hasUnit rdf:type owl:ObjectProperty ;
+         rdfs:domain :NumericMonitoringSensor ;
+         rdfs:range <http://qudt.org/schema/qudt/Unit> ;
+         rdfs:comment "The unit the observations of a CPSWatch#ContinuousMonitoringSensor or CPSWatch#EventMonitoringSensor monitoring sensor are made in." ;
+         rdfs:label "hasUnit" ;
+         owl:cardinality "1"^^xsd:nonNegativeInteger .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.w3.org/ns/sosa/hasSimpleResult
+<http://www.w3.org/ns/sosa/hasSimpleResult> rdf:type owl:DatatypeProperty ;
+                                            rdfs:domain :NumericObservation ;
+                                            rdfs:comment "The value of the observations of a CPSWatch#ContinuousMonitoringSensor or CPSWatch#EventMonitoringSensor monitoring sensor are made in." ;
+                                            rdfs:label "hasSimpleResult" ;
+                                            owl:cardinality "1"^^xsd:nonNegativeInteger .
+
+
+###  http://www.w3.org/ns/sosa/resultTime
+<http://www.w3.org/ns/sosa/resultTime> rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain :Observation ;
+                                       rdfs:comment "The dateTime of the observations of a CPSWatch#ContinuousMonitoringSensor or CPSWatch#EventMonitoringSensor monitoring sensor." ;
+                                       rdfs:label "resultTime" ;
+                                       owl:cardinality "1"^^xsd:nonNegativeInteger .
+
+
+###  https://w3id.org/CPSWatch#hasDeviationThreshold
+:hasDeviationThreshold rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :EventMonitoringSensor ;
+                       rdfs:range xsd:float ;
+                       rdfs:comment "Deviation threshold of a CPSWatch:EventMonitoringSensor that needs to be exceeded to save the current value." ;
+                       rdfs:label "hasDeviationThreshold" ;
+                       owl:cardinality "1"^^xsd:nonNegativeInteger .
+
+
+###  https://w3id.org/CPSWatch#hasSampleRate
+:hasSampleRate rdf:type owl:DatatypeProperty ;
+               rdfs:domain :ContinuousMonitoringSensor ;
+               rdfs:range xsd:float ;
+               rdfs:comment "Update rate in seconds (s) that the data is stored." ;
+               rdfs:label "hasSampleRate" ;
+               owl:cardinality "1"^^xsd:nonNegativeInteger .
+
+
+###  https://w3id.org/CPSWatch#hasSensorID
+:hasSensorID rdf:type owl:DatatypeProperty ;
+             rdfs:domain :MonitoringSensor ;
+             rdfs:range xsd:unsignedInt ;
+             rdfs:comment "The unique ID of a CPSWatch#MonitoringSensor."@en ;
+             rdfs:label "hasID"@en .
+
+
+###  https://w3id.org/CPSWatch#hasSystemID
+:hasSystemID rdf:type owl:DatatypeProperty ;
+             rdfs:domain :MonitoredSystem ;
+             rdfs:range xsd:unsignedInt ;
+             rdfs:comment "The unique ID of a CPSWatch#MonitoredSystem."@en ;
+             rdfs:label "hasID"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://qudt.org/schema/qudt/Unit
+<http://qudt.org/schema/qudt/Unit> rdf:type owl:Class ;
+                                   rdfs:comment "A unit of measure, or unit, is a particular quantity value that has been chosen as a scale for measuring other quantities the same kind (more generally of equivalent dimension). For example, the meter is a quantity of length that has been rigorously defined and standardized by the BIPM (International Board of Weights and Measures). Any measurement of the length can be expressed as a number multiplied by the unit meter. More formally, the value of a physical quantity Q with respect to a unit (U) is expressed as the scalar multiple of a real number (n) and U, as  \\\\\\\\(Q = nU\\\\\\\\). " ;
+                                   rdfs:label "Unit" .
+
+
+###  http://www.w3.org/ns/sosa/ObservableProperty
+<http://www.w3.org/ns/sosa/ObservableProperty> rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Organization
+foaf:Organization rdf:type owl:Class .
+
+
+###  https://w3id.org/CPSWatch#ContinuousMonitoringSensor
+:ContinuousMonitoringSensor rdf:type owl:Class ;
+                            rdfs:subClassOf :NumericMonitoringSensor ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :hasSampleRate ;
+                                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                                            ] ;
+                            rdfs:label "ContinuousMonitoringSensor" .
+
+
+###  https://w3id.org/CPSWatch#EventMonitoringSensor
+:EventMonitoringSensor rdf:type owl:Class ;
+                       rdfs:subClassOf :NumericMonitoringSensor ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasDeviationThreshold ;
+                                         owl:cardinality "1"^^xsd:nonNegativeInteger
+                                       ] ;
+                       rdfs:label "EventMonitoringSensor" .
+
+
+###  https://w3id.org/CPSWatch#MonitoredSystem
+:MonitoredSystem rdf:type owl:Class ;
+                 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasSystemID ;
+                                   owl:cardinality "1"^^xsd:nonNegativeInteger
+                                 ] ;
+                 rdfs:comment "A CPSWatch#MonitoredSystem is a system that is monitored by CPSWatch#MonitoringSensor." ;
+                 rdfs:label "MonitoredSystem" .
+
+
+###  https://w3id.org/CPSWatch#MonitoringSensor
+:MonitoringSensor rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasSensorID ;
+                                    owl:cardinality "1"^^xsd:nonNegativeInteger
+                                  ] ;
+                  rdfs:comment "A CPSWatch#MonitoringSensor is a sensor used to monitor a CPSWatch#MonitoredSystem. It can be of type CPSWatch#ContinuousMonitoringSensor, CPSWatch#EventMonitoringSensor, CPSWatch#StatusMonitoringSensor." ;
+                  rdfs:label "MonitoringSensor" .
+
+
+###  https://w3id.org/CPSWatch#NumericMonitoringSensor
+:NumericMonitoringSensor rdf:type owl:Class ;
+                         rdfs:subClassOf :MonitoringSensor ;
+                         rdfs:label "NumericMonitoringSensor" .
+
+
+###  https://w3id.org/CPSWatch#NumericObservation
+:NumericObservation rdf:type owl:Class ;
+                    rdfs:subClassOf :Observation ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty <http://www.w3.org/ns/sosa/hasSimpleResult> ;
+                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                    ] ;
+                    rdfs:comment "A CPSWatch#NumericObservation is an observation made by an CPSWatch#NumericMonitoringSensor." ;
+                    rdfs:label "NumericObservation " .
+
+
+###  https://w3id.org/CPSWatch#Observation
+:Observation rdf:type owl:Class ;
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty <http://www.w3.org/ns/sosa/madeBySensor> ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :MonitoringSensor
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty <http://www.w3.org/ns/sosa/resultTime> ;
+                               owl:cardinality "1"^^xsd:nonNegativeInteger
+                             ] ;
+             rdfs:comment "A CPSWatch#Observation is the parent class of CPSWatch#NumericObservation and CPSWatch#StatusObservation that describe the observation made by a CPSWatch#ContinuousMonitoringSensor, CPSWatch#EventMonitoringSensor, or CPSWatch#StatusMonitoringSensor." ;
+             rdfs:label "Observation" .
+
+
+###  https://w3id.org/CPSWatch#Status
+:Status rdf:type owl:Class ;
+        rdfs:comment "The status values a CPSWatch#StatusMonitoringSensor can return." ;
+        rdfs:label "Status" .
+
+
+###  https://w3id.org/CPSWatch#StatusMonitoringSensor
+:StatusMonitoringSensor rdf:type owl:Class ;
+                        rdfs:subClassOf :MonitoringSensor ;
+                        rdfs:label "StatusMonitoringSensor" .
+
+
+###  https://w3id.org/CPSWatch#StatusObservation
+:StatusObservation rdf:type owl:Class ;
+                   rdfs:subClassOf :Observation ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasStatus ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass :Status
+                                   ] ;
+                   rdfs:comment "A CPSWatch#StatusObservation is an observation made by an CPSWatch#StatusMonitoringSensor monitoring sensor." ;
+                   rdfs:label "StatusObservation " .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://w3id.org/CPSWatch#Closed
+:Closed rdf:type owl:NamedIndividual ,
+                 :Status .
+
+
+###  https://w3id.org/CPSWatch#Critical
+:Critical rdf:type owl:NamedIndividual ,
+                   :Status .
+
+
+###  https://w3id.org/CPSWatch#Error
+:Error rdf:type owl:NamedIndividual ,
+                :Status .
+
+
+###  https://w3id.org/CPSWatch#Off
+:Off rdf:type owl:NamedIndividual ,
+              :Status .
+
+
+###  https://w3id.org/CPSWatch#Ok
+:Ok rdf:type owl:NamedIndividual ,
+             :Status .
+
+
+###  https://w3id.org/CPSWatch#On
+:On rdf:type owl:NamedIndividual ,
+             :Status .
+
+
+###  https://w3id.org/CPSWatch#Open
+:Open rdf:type owl:NamedIndividual ,
+               :Status .
+
+
+###  https://w3id.org/CPSWatch#ShuttingDown
+:ShuttingDown rdf:type owl:NamedIndividual ,
+                       :Status .
+
+
+###  https://w3id.org/CPSWatch#Starting
+:Starting rdf:type owl:NamedIndividual ,
+                   :Status .
+
+
+###  https://www.hsu-hh.de#this
+<https://www.hsu-hh.de#this> rdf:type owl:NamedIndividual ,
+                                      foaf:Organization ;
+                             foaf:homepage "https://www.hsu-hh.de/en/" ;
+                             foaf:name "Helmut Schmidt University" .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<https://orcid.org/0009-0003-2548-8225> org:memberOf <https://www.hsu-hh.de#this> ;
+                                        foaf:name "Björn Ludwig"@en .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
