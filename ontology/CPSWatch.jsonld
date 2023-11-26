@@ -6,10 +6,50 @@
     "@value" : "1"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/CPSWatch#hasID"
+    "@id" : "https://w3id.org/CPSWatch#hasSampleRate"
   } ]
 }, {
-  "@id" : "_:genid12",
+  "@id" : "_:genid2",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/CPSWatch#hasDeviationThreshold"
+  } ]
+}, {
+  "@id" : "_:genid3",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/CPSWatch#hasSystemID"
+  } ]
+}, {
+  "@id" : "_:genid4",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/CPSWatch#hasSensorID"
+  } ]
+}, {
+  "@id" : "_:genid5",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.w3.org/ns/sosa/hasSimpleResult"
+  } ]
+}, {
+  "@id" : "_:genid6",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onClass" : [ {
     "@id" : "https://w3id.org/CPSWatch#MonitoringSensor"
@@ -22,28 +62,27 @@
     "@value" : "1"
   } ]
 }, {
-  "@id" : "_:genid2",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#oneOf" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/CPSWatch#Closed"
-    }, {
-      "@id" : "https://w3id.org/CPSWatch#Critical"
-    }, {
-      "@id" : "https://w3id.org/CPSWatch#Error"
-    }, {
-      "@id" : "https://w3id.org/CPSWatch#OK"
-    }, {
-      "@id" : "https://w3id.org/CPSWatch#Off"
-    }, {
-      "@id" : "https://w3id.org/CPSWatch#On"
-    }, {
-      "@id" : "https://w3id.org/CPSWatch#Open"
-    }, {
-      "@id" : "https://w3id.org/CPSWatch#ShuttingDown"
-    }, {
-      "@id" : "https://w3id.org/CPSWatch#Starting"
-    } ]
+  "@id" : "_:genid7",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.w3.org/ns/sosa/resultTime"
+  } ]
+}, {
+  "@id" : "_:genid8",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onClass" : [ {
+    "@id" : "https://w3id.org/CPSWatch#Status"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/CPSWatch#hasStatus"
+  } ],
+  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
   } ]
 }, {
   "@id" : "http://purl.org/dc/elements/1.1/description",
@@ -99,8 +138,14 @@
   "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
-  "@id" : "http://qudt.org/vocab/unit#QuantityValue",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+  "@id" : "http://qudt.org/schema/qudt/Unit",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A unit of measure, or unit, is a particular quantity value that has been chosen as a scale for measuring other quantities the same kind (more generally of equivalent dimension). For example, the meter is a quantity of length that has been rigorously defined and standardized by the BIPM (International Board of Weights and Measures). Any measurement of the length can be expressed as a number multiplied by the unit meter. More formally, the value of a physical quantity Q with respect to a unit (U) is expressed as the scalar multiple of a real number (n) and U, as  \\\\\\\\(Q = nU\\\\\\\\). "
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Unit"
+  } ]
 }, {
   "@id" : "http://www.w3.org/2002/07/owl#cardinality",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
@@ -114,7 +159,10 @@
   "@id" : "http://www.w3.org/ns/org#memberOf",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
-  "@id" : "http://www.w3.org/ns/sosa#hasSimpleResult",
+  "@id" : "http://www.w3.org/ns/sosa/ObservableProperty",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/ns/sosa/hasSimpleResult",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "The value of the observations of a CPSWatch#ContinuousMonitoringSensor or CPSWatch#EventMonitoringSensor monitoring sensor are made in."
@@ -124,22 +172,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "hasSimpleResult"
-  } ],
-  "http://www.w3.org/2002/07/owl#cardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ]
-}, {
-  "@id" : "http://www.w3.org/ns/sosa#resultTime",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "The dateTime of the observations of a CPSWatch#ContinuousMonitoringSensor or CPSWatch#EventMonitoringSensor monitoring sensor."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/CPSWatch#Observation"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "resultTime"
   } ],
   "http://www.w3.org/2002/07/owl#cardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
@@ -161,6 +193,39 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/CPSWatch#MonitoringSensor"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/ns/sosa/observes",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Connection between a CPSWatch#MonitoringSensor and a sosa#ObservableProperty. "
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/CPSWatch#MonitoringSensor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "observes"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/ns/sosa/ObservableProperty"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/ns/sosa/resultTime",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The dateTime of the observations of a CPSWatch#ContinuousMonitoringSensor or CPSWatch#EventMonitoringSensor monitoring sensor."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/CPSWatch#Observation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "resultTime"
+  } ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
   } ]
 }, {
   "@id" : "http://xmlns.com/foaf/0.1/Organization",
@@ -206,21 +271,21 @@
   } ],
   "http://purl.org/dc/terms/created" : [ {
     "@language" : "en",
-    "@value" : "November 19th, 2023"
+    "@value" : "November 21st 2023"
   } ],
   "http://purl.org/dc/terms/creator" : [ {
     "@id" : "https://orcid.org/0009-0003-2548-8225"
   } ],
   "http://purl.org/dc/terms/issued" : [ {
     "@language" : "en",
-    "@value" : "November 19th, 2023"
+    "@value" : "November 21st, 2023"
   } ],
   "http://purl.org/dc/terms/license" : [ {
     "@id" : "https://creativecommons.org/licenses/by/4.0/"
   } ],
   "http://purl.org/dc/terms/modified" : [ {
     "@language" : "en",
-    "@value" : "November 19th, 2023"
+    "@value" : "November 21st, 2023"
   } ],
   "http://purl.org/dc/terms/publisher" : [ {
     "@language" : "en",
@@ -242,7 +307,7 @@
     "@value" : "1.0.0 release of the CPSWatch Ontology"
   } ],
   "http://www.w3.org/2002/07/owl#versionIRI" : [ {
-    "@id" : "https://w3id.org/CPSWatch/1.0.0"
+    "@id" : "https://w3id.org/CPSWatch/"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
     "@language" : "en",
@@ -256,7 +321,7 @@
   } ]
 }, {
   "@id" : "https://w3id.org/CPSWatch#Closed",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/CPSWatch#DiscreteStatus" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/CPSWatch#Status" ]
 }, {
   "@id" : "https://w3id.org/CPSWatch#ContinuousMonitoringSensor",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
@@ -265,31 +330,15 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/CPSWatch#NumericMonitoringSensor"
-  } ]
-}, {
-  "@id" : "https://w3id.org/CPSWatch#CpsComponent",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A CPSWatch#CpsComponent component of a cyber phyisical system."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "CpsComponent"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+  }, {
     "@id" : "_:genid1"
   } ]
 }, {
   "@id" : "https://w3id.org/CPSWatch#Critical",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/CPSWatch#DiscreteStatus" ]
-}, {
-  "@id" : "https://w3id.org/CPSWatch#DiscreteStatus",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid2"
-  } ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/CPSWatch#Status" ]
 }, {
   "@id" : "https://w3id.org/CPSWatch#Error",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/CPSWatch#DiscreteStatus" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/CPSWatch#Status" ]
 }, {
   "@id" : "https://w3id.org/CPSWatch#EventMonitoringSensor",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
@@ -298,6 +347,8 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/CPSWatch#NumericMonitoringSensor"
+  }, {
+    "@id" : "_:genid2"
   } ]
 }, {
   "@id" : "https://w3id.org/CPSWatch#MonitoredSystem",
@@ -309,7 +360,7 @@
     "@value" : "MonitoredSystem"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/CPSWatch#CpsComponent"
+    "@id" : "_:genid3"
   } ]
 }, {
   "@id" : "https://w3id.org/CPSWatch#MonitoringSensor",
@@ -321,7 +372,7 @@
     "@value" : "MonitoringSensor"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/CPSWatch#CpsComponent"
+    "@id" : "_:genid4"
   } ]
 }, {
   "@id" : "https://w3id.org/CPSWatch#NumericMonitoringSensor",
@@ -343,10 +394,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/CPSWatch#Observation"
+  }, {
+    "@id" : "_:genid5"
   } ]
-}, {
-  "@id" : "https://w3id.org/CPSWatch#OK",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/CPSWatch#DiscreteStatus" ]
 }, {
   "@id" : "https://w3id.org/CPSWatch#Observation",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
@@ -357,23 +407,37 @@
     "@value" : "Observation"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid12"
+    "@id" : "_:genid6"
+  }, {
+    "@id" : "_:genid7"
   } ]
 }, {
   "@id" : "https://w3id.org/CPSWatch#Off",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/CPSWatch#DiscreteStatus" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/CPSWatch#Status" ]
+}, {
+  "@id" : "https://w3id.org/CPSWatch#Ok",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/CPSWatch#Status" ]
 }, {
   "@id" : "https://w3id.org/CPSWatch#On",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/CPSWatch#DiscreteStatus" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/CPSWatch#Status" ]
 }, {
   "@id" : "https://w3id.org/CPSWatch#Open",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/CPSWatch#DiscreteStatus" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/CPSWatch#Status" ]
 }, {
   "@id" : "https://w3id.org/CPSWatch#ShuttingDown",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/CPSWatch#DiscreteStatus" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/CPSWatch#Status" ]
 }, {
   "@id" : "https://w3id.org/CPSWatch#Starting",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/CPSWatch#DiscreteStatus" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://w3id.org/CPSWatch#Status" ]
+}, {
+  "@id" : "https://w3id.org/CPSWatch#Status",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The status values a CPSWatch#StatusMonitoringSensor can return."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Status"
+  } ]
 }, {
   "@id" : "https://w3id.org/CPSWatch#StatusMonitoringSensor",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
@@ -394,6 +458,8 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/CPSWatch#Observation"
+  }, {
+    "@id" : "_:genid8"
   } ]
 }, {
   "@id" : "https://w3id.org/CPSWatch#hasDeviationThreshold",
@@ -413,42 +479,6 @@
   "http://www.w3.org/2002/07/owl#cardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
     "@value" : "1"
-  } ]
-}, {
-  "@id" : "https://w3id.org/CPSWatch#hasDiscreteStatus",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "The Status of the observations of a CPSWatch#StatusMonitoringSensor."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/CPSWatch#StatusObservation"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "hasDiscreteStatus"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/CPSWatch#DiscreteStatus"
-  } ],
-  "http://www.w3.org/2002/07/owl#cardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ]
-}, {
-  "@id" : "https://w3id.org/CPSWatch#hasID",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "The unique ID of a CPSWatch#MonitoredSystem or CPSWatch#MonitoringSensor."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/CPSWatch#CpsComponent"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "hasID"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#unsignedInt"
   } ]
 }, {
   "@id" : "https://w3id.org/CPSWatch#hasInfluence",
@@ -544,6 +574,23 @@
     "@value" : "1"
   } ]
 }, {
+  "@id" : "https://w3id.org/CPSWatch#hasSensorID",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The unique ID of a CPSWatch#MonitoringSensor."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/CPSWatch#MonitoringSensor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "hasID"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#unsignedInt"
+  } ]
+}, {
   "@id" : "https://w3id.org/CPSWatch#hasStates",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -556,7 +603,26 @@
     "@value" : "hasStates"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/CPSWatch#DiscreteStatus"
+    "@id" : "https://w3id.org/CPSWatch#Status"
+  } ]
+}, {
+  "@id" : "https://w3id.org/CPSWatch#hasStatus",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The Status of the observations of a CPSWatch#StatusMonitoringSensor."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/CPSWatch#StatusObservation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "hasStatus"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/CPSWatch#Status"
+  } ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
   } ]
 }, {
   "@id" : "https://w3id.org/CPSWatch#hasSubSystem",
@@ -596,6 +662,23 @@
     "@id" : "https://w3id.org/CPSWatch#hasSystemConnection"
   } ]
 }, {
+  "@id" : "https://w3id.org/CPSWatch#hasSystemID",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The unique ID of a CPSWatch#MonitoredSystem."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/CPSWatch#MonitoredSystem"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "hasID"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#unsignedInt"
+  } ]
+}, {
   "@id" : "https://w3id.org/CPSWatch#hasUnit",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -608,7 +691,7 @@
     "@value" : "hasUnit"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://qudt.org/vocab/unit#QuantityValue"
+    "@id" : "http://qudt.org/schema/qudt/Unit"
   } ],
   "http://www.w3.org/2002/07/owl#cardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",

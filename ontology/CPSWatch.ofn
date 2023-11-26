@@ -1,90 +1,99 @@
 Prefix(:=<https://w3id.org/CPSWatch#>)
+Prefix(dc:=<http://purl.org/dc/elements/1.1/>)
+Prefix(org:=<http://www.w3.org/ns/org#>)
 Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
 Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
 Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
 Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(bibo:=<http://purl.org/ontology/bibo/>)
+Prefix(foaf:=<http://xmlns.com/foaf/0.1/>)
 Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+Prefix(vann:=<http://purl.org/vocab/vann/>)
+Prefix(terms:=<http://purl.org/dc/terms/>)
+Prefix(schema:=<https://schema.org/>)
 
 
 Ontology(<https://w3id.org/CPSWatch>
-<https://w3id.org/CPSWatch/1.0.0>
-Annotation(<http://purl.org/dc/elements/1.1/description> "This ontology defines a vocabulary for describing cyber physical systems for monitoring purpose. It contains two main concepts: CPSWatch#MonitoredSystem that is a top level description of a System that is modeled and CPSWatch#MonitoringSensor that is a top level description of a sensor used to monitor the CPSWatch#MonitoredSystem. "@en)
-Annotation(<http://purl.org/dc/elements/1.1/title> "The Cyber Physical System Watch Ontology"@en)
-Annotation(<http://purl.org/dc/terms/abstract> "Manufacturers and users want to monitore their cyber physical systems. In the Industry 4.0 this is done by observing data from sensors. The problem arises when looking at a system of systems, e.g. a production plant or a whole powertrain of a vessel. Multiple systems describe their data in multiple ways and create the problem of analysing these data together in one system. To tackle this problem and to make transferability of algorithms (ML methods) between different monitoring systems possible, the CPSWatch Ontology is defined to create a top level description of a CPS system. "@en)
-Annotation(<http://purl.org/dc/terms/created> "November 19th, 2023"@en)
-Annotation(<http://purl.org/dc/terms/creator> <https://orcid.org/0009-0003-2548-8225>)
-Annotation(<http://purl.org/dc/terms/issued> "November 19th, 2023"@en)
-Annotation(<http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/>)
-Annotation(<http://purl.org/dc/terms/modified> "November 19th, 2023"@en)
-Annotation(<http://purl.org/dc/terms/publisher> "CPSWatch on Github"@en)
-Annotation(<http://purl.org/ontology/bibo/status> "CPSWatch (stable)"@en)
-Annotation(<http://purl.org/vocab/vann/preferredNamespacePrefix> "CPSWatch"@en)
-Annotation(<http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/CPSWatch#")
+<https://w3id.org/CPSWatch/>
+Annotation(dc:description "This ontology defines a vocabulary for describing cyber physical systems for monitoring purpose. It contains two main concepts: CPSWatch#MonitoredSystem that is a top level description of a System that is modeled and CPSWatch#MonitoringSensor that is a top level description of a sensor used to monitor the CPSWatch#MonitoredSystem. "@en)
+Annotation(dc:title "The Cyber Physical System Watch Ontology"@en)
+Annotation(terms:abstract "Manufacturers and users want to monitore their cyber physical systems. In the Industry 4.0 this is done by observing data from sensors. The problem arises when looking at a system of systems, e.g. a production plant or a whole powertrain of a vessel. Multiple systems describe their data in multiple ways and create the problem of analysing these data together in one system. To tackle this problem and to make transferability of algorithms (ML methods) between different monitoring systems possible, the CPSWatch Ontology is defined to create a top level description of a CPS system. "@en)
+Annotation(terms:created "November 21st 2023"@en)
+Annotation(terms:creator <https://orcid.org/0009-0003-2548-8225>)
+Annotation(terms:issued "November 21st, 2023"@en)
+Annotation(terms:license <https://creativecommons.org/licenses/by/4.0/>)
+Annotation(terms:modified "November 21st, 2023"@en)
+Annotation(terms:publisher "CPSWatch on Github"@en)
+Annotation(bibo:status "CPSWatch (stable)"@en)
+Annotation(vann:preferredNamespacePrefix "CPSWatch"@en)
+Annotation(vann:preferredNamespaceUri "https://w3id.org/CPSWatch#")
 Annotation(rdfs:comment "1.0.0 release of the CPSWatch Ontology"@en)
 Annotation(owl:versionInfo "1.0.0"@en)
-Annotation(<https://schema.org/image> <https://github.com/B-Ludwig/CPSWatch/blob/aa184a2003274995672a6dd3ca445b12a5286f52/assets/Logo.png>)
-Annotation(<https://schema.org/logo> <https://github.com/B-Ludwig/CPSWatch/blob/aa184a2003274995672a6dd3ca445b12a5286f52/assets/Logo.png>)
+Annotation(schema:image <https://github.com/B-Ludwig/CPSWatch/blob/aa184a2003274995672a6dd3ca445b12a5286f52/assets/Logo.png>)
+Annotation(schema:logo <https://github.com/B-Ludwig/CPSWatch/blob/aa184a2003274995672a6dd3ca445b12a5286f52/assets/Logo.png>)
 
-Declaration(Class(<http://qudt.org/vocab/unit#QuantityValue>))
-Declaration(Class(<http://xmlns.com/foaf/0.1/Organization>))
+Declaration(Class(<http://qudt.org/schema/qudt/Unit>))
+Declaration(Class(<http://www.w3.org/ns/sosa/ObservableProperty>))
+Declaration(Class(foaf:Organization))
 Declaration(Class(:ContinuousMonitoringSensor))
-Declaration(Class(:CpsComponent))
-Declaration(Class(:DiscreteStatus))
 Declaration(Class(:EventMonitoringSensor))
 Declaration(Class(:MonitoredSystem))
 Declaration(Class(:MonitoringSensor))
 Declaration(Class(:NumericMonitoringSensor))
 Declaration(Class(:NumericObservation))
 Declaration(Class(:Observation))
+Declaration(Class(:Status))
 Declaration(Class(:StatusMonitoringSensor))
 Declaration(Class(:StatusObservation))
-Declaration(ObjectProperty(<http://purl.org/dc/elements/1.1/publisher>))
+Declaration(ObjectProperty(dc:publisher))
 Declaration(ObjectProperty(<http://www.w3.org/ns/sosa/madeBySensor>))
-Declaration(ObjectProperty(:hasDiscreteStatus))
+Declaration(ObjectProperty(<http://www.w3.org/ns/sosa/observes>))
 Declaration(ObjectProperty(:hasInfluence))
 Declaration(ObjectProperty(:hasMonitoringSensor))
 Declaration(ObjectProperty(:hasNegativeCorrelation))
 Declaration(ObjectProperty(:hasPositiveCorrelation))
 Declaration(ObjectProperty(:hasStates))
+Declaration(ObjectProperty(:hasStatus))
 Declaration(ObjectProperty(:hasSubSystem))
 Declaration(ObjectProperty(:hasSystemConnection))
 Declaration(ObjectProperty(:hasUnit))
-Declaration(DataProperty(<http://www.w3.org/ns/sosa#hasSimpleResult>))
-Declaration(DataProperty(<http://www.w3.org/ns/sosa#resultTime>))
+Declaration(DataProperty(<http://www.w3.org/ns/sosa/hasSimpleResult>))
+Declaration(DataProperty(<http://www.w3.org/ns/sosa/resultTime>))
 Declaration(DataProperty(:hasDeviationThreshold))
-Declaration(DataProperty(:hasID))
 Declaration(DataProperty(:hasSampleRate))
+Declaration(DataProperty(:hasSensorID))
+Declaration(DataProperty(:hasSystemID))
 Declaration(NamedIndividual(:Closed))
 Declaration(NamedIndividual(:Critical))
 Declaration(NamedIndividual(:Error))
-Declaration(NamedIndividual(:OK))
 Declaration(NamedIndividual(:Off))
+Declaration(NamedIndividual(:Ok))
 Declaration(NamedIndividual(:On))
 Declaration(NamedIndividual(:Open))
 Declaration(NamedIndividual(:ShuttingDown))
 Declaration(NamedIndividual(:Starting))
 Declaration(NamedIndividual(<https://www.hsu-hh.de#this>))
-Declaration(AnnotationProperty(<http://purl.org/dc/elements/1.1/description>))
-Declaration(AnnotationProperty(<http://purl.org/dc/elements/1.1/title>))
-Declaration(AnnotationProperty(<http://purl.org/dc/terms/abstract>))
-Declaration(AnnotationProperty(<http://purl.org/dc/terms/created>))
-Declaration(AnnotationProperty(<http://purl.org/dc/terms/creator>))
-Declaration(AnnotationProperty(<http://purl.org/dc/terms/description>))
-Declaration(AnnotationProperty(<http://purl.org/dc/terms/issued>))
-Declaration(AnnotationProperty(<http://purl.org/dc/terms/license>))
-Declaration(AnnotationProperty(<http://purl.org/dc/terms/modified>))
-Declaration(AnnotationProperty(<http://purl.org/dc/terms/publisher>))
-Declaration(AnnotationProperty(<http://purl.org/ontology/bibo/status>))
-Declaration(AnnotationProperty(<http://purl.org/vocab/vann/preferredNamespacePrefix>))
-Declaration(AnnotationProperty(<http://purl.org/vocab/vann/preferredNamespaceUri>))
+Declaration(AnnotationProperty(dc:description))
+Declaration(AnnotationProperty(dc:title))
+Declaration(AnnotationProperty(terms:abstract))
+Declaration(AnnotationProperty(terms:created))
+Declaration(AnnotationProperty(terms:creator))
+Declaration(AnnotationProperty(terms:description))
+Declaration(AnnotationProperty(terms:issued))
+Declaration(AnnotationProperty(terms:license))
+Declaration(AnnotationProperty(terms:modified))
+Declaration(AnnotationProperty(terms:publisher))
+Declaration(AnnotationProperty(bibo:status))
+Declaration(AnnotationProperty(vann:preferredNamespacePrefix))
+Declaration(AnnotationProperty(vann:preferredNamespaceUri))
 Declaration(AnnotationProperty(owl:cardinality))
 Declaration(AnnotationProperty(<http://www.w3.org/2008/05/skos#prefLabel>))
-Declaration(AnnotationProperty(<http://www.w3.org/ns/org#memberOf>))
-Declaration(AnnotationProperty(<http://xmlns.com/foaf/0.1/homepage>))
-Declaration(AnnotationProperty(<http://xmlns.com/foaf/0.1/name>))
-Declaration(AnnotationProperty(<https://schema.org/image>))
-Declaration(AnnotationProperty(<https://schema.org/includedInDataCatalog>))
-Declaration(AnnotationProperty(<https://schema.org/logo>))
+Declaration(AnnotationProperty(org:memberOf))
+Declaration(AnnotationProperty(foaf:homepage))
+Declaration(AnnotationProperty(foaf:name))
+Declaration(AnnotationProperty(schema:image))
+Declaration(AnnotationProperty(schema:includedInDataCatalog))
+Declaration(AnnotationProperty(schema:logo))
 ############################
 #   Annotation Properties
 ############################
@@ -98,11 +107,11 @@ SubAnnotationPropertyOf(<http://www.w3.org/2008/05/skos#prefLabel> rdfs:label)
 #   Object Properties
 ############################
 
-# Object Property: <http://purl.org/dc/elements/1.1/publisher> (publisher)
+# Object Property: dc:publisher (publisher)
 
-AnnotationAssertion(rdfs:comment <http://purl.org/dc/elements/1.1/publisher> "An entity responsible for making the resource available."@en)
-AnnotationAssertion(rdfs:isDefinedBy <http://purl.org/dc/elements/1.1/publisher> <http://purl.org/dc/elements/1.1/>)
-AnnotationAssertion(rdfs:label <http://purl.org/dc/elements/1.1/publisher> "publisher"@en)
+AnnotationAssertion(rdfs:comment dc:publisher "An entity responsible for making the resource available."@en)
+AnnotationAssertion(rdfs:isDefinedBy dc:publisher <http://purl.org/dc/elements/1.1/>)
+AnnotationAssertion(rdfs:label dc:publisher "publisher"@en)
 
 # Object Property: <http://www.w3.org/ns/sosa/madeBySensor> (madeBySensor)
 
@@ -111,13 +120,12 @@ AnnotationAssertion(rdfs:label <http://www.w3.org/ns/sosa/madeBySensor> "madeByS
 ObjectPropertyDomain(<http://www.w3.org/ns/sosa/madeBySensor> :Observation)
 ObjectPropertyRange(<http://www.w3.org/ns/sosa/madeBySensor> :MonitoringSensor)
 
-# Object Property: :hasDiscreteStatus (hasDiscreteStatus)
+# Object Property: <http://www.w3.org/ns/sosa/observes> (observes)
 
-AnnotationAssertion(rdfs:comment :hasDiscreteStatus "The Status of the observations of a CPSWatch#StatusMonitoringSensor.")
-AnnotationAssertion(rdfs:label :hasDiscreteStatus "hasDiscreteStatus")
-AnnotationAssertion(owl:cardinality :hasDiscreteStatus "1"^^xsd:nonNegativeInteger)
-ObjectPropertyDomain(:hasDiscreteStatus :StatusObservation)
-ObjectPropertyRange(:hasDiscreteStatus :DiscreteStatus)
+AnnotationAssertion(rdfs:comment <http://www.w3.org/ns/sosa/observes> "Connection between a CPSWatch#MonitoringSensor and a sosa#ObservableProperty. "@en)
+AnnotationAssertion(rdfs:label <http://www.w3.org/ns/sosa/observes> "observes"@en)
+ObjectPropertyDomain(<http://www.w3.org/ns/sosa/observes> :MonitoringSensor)
+ObjectPropertyRange(<http://www.w3.org/ns/sosa/observes> <http://www.w3.org/ns/sosa/ObservableProperty>)
 
 # Object Property: :hasInfluence (hasInfluence)
 
@@ -154,7 +162,15 @@ ObjectPropertyRange(:hasPositiveCorrelation :MonitoringSensor)
 AnnotationAssertion(rdfs:comment :hasStates "The possible states that a CPSWatch#StatusMonitoringSensor can have.")
 AnnotationAssertion(rdfs:label :hasStates "hasStates")
 ObjectPropertyDomain(:hasStates :StatusMonitoringSensor)
-ObjectPropertyRange(:hasStates :DiscreteStatus)
+ObjectPropertyRange(:hasStates :Status)
+
+# Object Property: :hasStatus (hasStatus)
+
+AnnotationAssertion(rdfs:comment :hasStatus "The Status of the observations of a CPSWatch#StatusMonitoringSensor.")
+AnnotationAssertion(rdfs:label :hasStatus "hasStatus")
+AnnotationAssertion(owl:cardinality :hasStatus "1"^^xsd:nonNegativeInteger)
+ObjectPropertyDomain(:hasStatus :StatusObservation)
+ObjectPropertyRange(:hasStatus :Status)
 
 # Object Property: :hasSubSystem (hasSubSystem)
 
@@ -177,26 +193,26 @@ AnnotationAssertion(rdfs:comment :hasUnit "The unit the observations of a CPSWat
 AnnotationAssertion(rdfs:label :hasUnit "hasUnit")
 AnnotationAssertion(owl:cardinality :hasUnit "1"^^xsd:nonNegativeInteger)
 ObjectPropertyDomain(:hasUnit :NumericMonitoringSensor)
-ObjectPropertyRange(:hasUnit <http://qudt.org/vocab/unit#QuantityValue>)
+ObjectPropertyRange(:hasUnit <http://qudt.org/schema/qudt/Unit>)
 
 
 ############################
 #   Data Properties
 ############################
 
-# Data Property: <http://www.w3.org/ns/sosa#hasSimpleResult> (hasSimpleResult)
+# Data Property: <http://www.w3.org/ns/sosa/hasSimpleResult> (hasSimpleResult)
 
-AnnotationAssertion(rdfs:comment <http://www.w3.org/ns/sosa#hasSimpleResult> "The value of the observations of a CPSWatch#ContinuousMonitoringSensor or CPSWatch#EventMonitoringSensor monitoring sensor are made in.")
-AnnotationAssertion(rdfs:label <http://www.w3.org/ns/sosa#hasSimpleResult> "hasSimpleResult")
-AnnotationAssertion(owl:cardinality <http://www.w3.org/ns/sosa#hasSimpleResult> "1"^^xsd:nonNegativeInteger)
-DataPropertyDomain(<http://www.w3.org/ns/sosa#hasSimpleResult> :NumericObservation)
+AnnotationAssertion(rdfs:comment <http://www.w3.org/ns/sosa/hasSimpleResult> "The value of the observations of a CPSWatch#ContinuousMonitoringSensor or CPSWatch#EventMonitoringSensor monitoring sensor are made in.")
+AnnotationAssertion(rdfs:label <http://www.w3.org/ns/sosa/hasSimpleResult> "hasSimpleResult")
+AnnotationAssertion(owl:cardinality <http://www.w3.org/ns/sosa/hasSimpleResult> "1"^^xsd:nonNegativeInteger)
+DataPropertyDomain(<http://www.w3.org/ns/sosa/hasSimpleResult> :NumericObservation)
 
-# Data Property: <http://www.w3.org/ns/sosa#resultTime> (resultTime)
+# Data Property: <http://www.w3.org/ns/sosa/resultTime> (resultTime)
 
-AnnotationAssertion(rdfs:comment <http://www.w3.org/ns/sosa#resultTime> "The dateTime of the observations of a CPSWatch#ContinuousMonitoringSensor or CPSWatch#EventMonitoringSensor monitoring sensor.")
-AnnotationAssertion(rdfs:label <http://www.w3.org/ns/sosa#resultTime> "resultTime")
-AnnotationAssertion(owl:cardinality <http://www.w3.org/ns/sosa#resultTime> "1"^^xsd:nonNegativeInteger)
-DataPropertyDomain(<http://www.w3.org/ns/sosa#resultTime> :Observation)
+AnnotationAssertion(rdfs:comment <http://www.w3.org/ns/sosa/resultTime> "The dateTime of the observations of a CPSWatch#ContinuousMonitoringSensor or CPSWatch#EventMonitoringSensor monitoring sensor.")
+AnnotationAssertion(rdfs:label <http://www.w3.org/ns/sosa/resultTime> "resultTime")
+AnnotationAssertion(owl:cardinality <http://www.w3.org/ns/sosa/resultTime> "1"^^xsd:nonNegativeInteger)
+DataPropertyDomain(<http://www.w3.org/ns/sosa/resultTime> :Observation)
 
 # Data Property: :hasDeviationThreshold (hasDeviationThreshold)
 
@@ -206,13 +222,6 @@ AnnotationAssertion(owl:cardinality :hasDeviationThreshold "1"^^xsd:nonNegativeI
 DataPropertyDomain(:hasDeviationThreshold :EventMonitoringSensor)
 DataPropertyRange(:hasDeviationThreshold xsd:float)
 
-# Data Property: :hasID (hasID)
-
-AnnotationAssertion(rdfs:comment :hasID "The unique ID of a CPSWatch#MonitoredSystem or CPSWatch#MonitoringSensor."@en)
-AnnotationAssertion(rdfs:label :hasID "hasID"@en)
-DataPropertyDomain(:hasID :CpsComponent)
-DataPropertyRange(:hasID xsd:unsignedInt)
-
 # Data Property: :hasSampleRate (hasSampleRate)
 
 AnnotationAssertion(rdfs:comment :hasSampleRate "Update rate in seconds (s) that the data is stored.")
@@ -221,43 +230,54 @@ AnnotationAssertion(owl:cardinality :hasSampleRate "1"^^xsd:nonNegativeInteger)
 DataPropertyDomain(:hasSampleRate :ContinuousMonitoringSensor)
 DataPropertyRange(:hasSampleRate xsd:float)
 
+# Data Property: :hasSensorID (hasID)
+
+AnnotationAssertion(rdfs:comment :hasSensorID "The unique ID of a CPSWatch#MonitoringSensor."@en)
+AnnotationAssertion(rdfs:label :hasSensorID "hasID"@en)
+DataPropertyDomain(:hasSensorID :MonitoringSensor)
+DataPropertyRange(:hasSensorID xsd:unsignedInt)
+
+# Data Property: :hasSystemID (hasID)
+
+AnnotationAssertion(rdfs:comment :hasSystemID "The unique ID of a CPSWatch#MonitoredSystem."@en)
+AnnotationAssertion(rdfs:label :hasSystemID "hasID"@en)
+DataPropertyDomain(:hasSystemID :MonitoredSystem)
+DataPropertyRange(:hasSystemID xsd:unsignedInt)
+
 
 
 ############################
 #   Classes
 ############################
 
+# Class: <http://qudt.org/schema/qudt/Unit> (Unit)
+
+AnnotationAssertion(rdfs:comment <http://qudt.org/schema/qudt/Unit> "A unit of measure, or unit, is a particular quantity value that has been chosen as a scale for measuring other quantities the same kind (more generally of equivalent dimension). For example, the meter is a quantity of length that has been rigorously defined and standardized by the BIPM (International Board of Weights and Measures). Any measurement of the length can be expressed as a number multiplied by the unit meter. More formally, the value of a physical quantity Q with respect to a unit (U) is expressed as the scalar multiple of a real number (n) and U, as  \\\\\\\\(Q = nU\\\\\\\\). ")
+AnnotationAssertion(rdfs:label <http://qudt.org/schema/qudt/Unit> "Unit")
+
 # Class: :ContinuousMonitoringSensor (ContinuousMonitoringSensor)
 
 AnnotationAssertion(rdfs:label :ContinuousMonitoringSensor "ContinuousMonitoringSensor")
 SubClassOf(:ContinuousMonitoringSensor :NumericMonitoringSensor)
-
-# Class: :CpsComponent (CpsComponent)
-
-AnnotationAssertion(rdfs:comment :CpsComponent "A CPSWatch#CpsComponent component of a cyber phyisical system.")
-AnnotationAssertion(rdfs:label :CpsComponent "CpsComponent")
-SubClassOf(:CpsComponent DataExactCardinality(1 :hasID))
-
-# Class: :DiscreteStatus (:DiscreteStatus)
-
-EquivalentClasses(:DiscreteStatus ObjectOneOf(:Closed :Critical :Error :OK :Off :On :Open :ShuttingDown :Starting))
+SubClassOf(:ContinuousMonitoringSensor DataExactCardinality(1 :hasSampleRate))
 
 # Class: :EventMonitoringSensor (EventMonitoringSensor)
 
 AnnotationAssertion(rdfs:label :EventMonitoringSensor "EventMonitoringSensor")
 SubClassOf(:EventMonitoringSensor :NumericMonitoringSensor)
+SubClassOf(:EventMonitoringSensor DataExactCardinality(1 :hasDeviationThreshold))
 
 # Class: :MonitoredSystem (MonitoredSystem)
 
 AnnotationAssertion(rdfs:comment :MonitoredSystem "A CPSWatch#MonitoredSystem is a system that is monitored by CPSWatch#MonitoringSensor.")
 AnnotationAssertion(rdfs:label :MonitoredSystem "MonitoredSystem")
-SubClassOf(:MonitoredSystem :CpsComponent)
+SubClassOf(:MonitoredSystem DataExactCardinality(1 :hasSystemID))
 
 # Class: :MonitoringSensor (MonitoringSensor)
 
 AnnotationAssertion(rdfs:comment :MonitoringSensor "A CPSWatch#MonitoringSensor is a sensor used to monitor a CPSWatch#MonitoredSystem. It can be of type CPSWatch#ContinuousMonitoringSensor, CPSWatch#EventMonitoringSensor, CPSWatch#StatusMonitoringSensor.")
 AnnotationAssertion(rdfs:label :MonitoringSensor "MonitoringSensor")
-SubClassOf(:MonitoringSensor :CpsComponent)
+SubClassOf(:MonitoringSensor DataExactCardinality(1 :hasSensorID))
 
 # Class: :NumericMonitoringSensor (NumericMonitoringSensor)
 
@@ -269,12 +289,19 @@ SubClassOf(:NumericMonitoringSensor :MonitoringSensor)
 AnnotationAssertion(rdfs:comment :NumericObservation "A CPSWatch#NumericObservation is an observation made by an CPSWatch#NumericMonitoringSensor.")
 AnnotationAssertion(rdfs:label :NumericObservation "NumericObservation ")
 SubClassOf(:NumericObservation :Observation)
+SubClassOf(:NumericObservation DataExactCardinality(1 <http://www.w3.org/ns/sosa/hasSimpleResult>))
 
 # Class: :Observation (Observation)
 
 AnnotationAssertion(rdfs:comment :Observation "A CPSWatch#Observation is the parent class of CPSWatch#NumericObservation and CPSWatch#StatusObservation that describe the observation made by a CPSWatch#ContinuousMonitoringSensor, CPSWatch#EventMonitoringSensor, or CPSWatch#StatusMonitoringSensor.")
 AnnotationAssertion(rdfs:label :Observation "Observation")
 SubClassOf(:Observation ObjectExactCardinality(1 <http://www.w3.org/ns/sosa/madeBySensor> :MonitoringSensor))
+SubClassOf(:Observation DataExactCardinality(1 <http://www.w3.org/ns/sosa/resultTime>))
+
+# Class: :Status (Status)
+
+AnnotationAssertion(rdfs:comment :Status "The status values a CPSWatch#StatusMonitoringSensor can return.")
+AnnotationAssertion(rdfs:label :Status "Status")
 
 # Class: :StatusMonitoringSensor (StatusMonitoringSensor)
 
@@ -286,6 +313,7 @@ SubClassOf(:StatusMonitoringSensor :MonitoringSensor)
 AnnotationAssertion(rdfs:comment :StatusObservation "A CPSWatch#StatusObservation is an observation made by an CPSWatch#StatusMonitoringSensor monitoring sensor.")
 AnnotationAssertion(rdfs:label :StatusObservation "StatusObservation ")
 SubClassOf(:StatusObservation :Observation)
+SubClassOf(:StatusObservation ObjectExactCardinality(1 :hasStatus :Status))
 
 
 ############################
@@ -294,47 +322,47 @@ SubClassOf(:StatusObservation :Observation)
 
 # Individual: :Closed (:Closed)
 
-ClassAssertion(:DiscreteStatus :Closed)
+ClassAssertion(:Status :Closed)
 
 # Individual: :Critical (:Critical)
 
-ClassAssertion(:DiscreteStatus :Critical)
+ClassAssertion(:Status :Critical)
 
 # Individual: :Error (:Error)
 
-ClassAssertion(:DiscreteStatus :Error)
-
-# Individual: :OK (:OK)
-
-ClassAssertion(:DiscreteStatus :OK)
+ClassAssertion(:Status :Error)
 
 # Individual: :Off (:Off)
 
-ClassAssertion(:DiscreteStatus :Off)
+ClassAssertion(:Status :Off)
+
+# Individual: :Ok (:Ok)
+
+ClassAssertion(:Status :Ok)
 
 # Individual: :On (:On)
 
-ClassAssertion(:DiscreteStatus :On)
+ClassAssertion(:Status :On)
 
 # Individual: :Open (:Open)
 
-ClassAssertion(:DiscreteStatus :Open)
+ClassAssertion(:Status :Open)
 
 # Individual: :ShuttingDown (:ShuttingDown)
 
-ClassAssertion(:DiscreteStatus :ShuttingDown)
+ClassAssertion(:Status :ShuttingDown)
 
 # Individual: :Starting (:Starting)
 
-ClassAssertion(:DiscreteStatus :Starting)
+ClassAssertion(:Status :Starting)
 
 # Individual: <https://www.hsu-hh.de#this> (<https://www.hsu-hh.de#this>)
 
-AnnotationAssertion(<http://xmlns.com/foaf/0.1/homepage> <https://www.hsu-hh.de#this> "https://www.hsu-hh.de/en/")
-AnnotationAssertion(<http://xmlns.com/foaf/0.1/name> <https://www.hsu-hh.de#this> "Helmut Schmidt University")
-ClassAssertion(<http://xmlns.com/foaf/0.1/Organization> <https://www.hsu-hh.de#this>)
+AnnotationAssertion(foaf:homepage <https://www.hsu-hh.de#this> "https://www.hsu-hh.de/en/")
+AnnotationAssertion(foaf:name <https://www.hsu-hh.de#this> "Helmut Schmidt University")
+ClassAssertion(foaf:Organization <https://www.hsu-hh.de#this>)
 
 
-AnnotationAssertion(<http://www.w3.org/ns/org#memberOf> <https://orcid.org/0009-0003-2548-8225> <https://www.hsu-hh.de#this>)
-AnnotationAssertion(<http://xmlns.com/foaf/0.1/name> <https://orcid.org/0009-0003-2548-8225> "Björn Ludwig"@en)
+AnnotationAssertion(org:memberOf <https://orcid.org/0009-0003-2548-8225> <https://www.hsu-hh.de#this>)
+AnnotationAssertion(foaf:name <https://orcid.org/0009-0003-2548-8225> "Björn Ludwig"@en)
 )
