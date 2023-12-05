@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+ <link rel="stylesheet" href="resources/primer.css" media="screen" />   
+ <link rel="stylesheet" href="resources/rec.css" media="screen" />   
+ <link rel="stylesheet" href="resources/extra.css" media="screen" />   
+ <link rel="stylesheet" href="resources/owl.css" media="screen" />   
+<link rel="icon" type="image/png" href="resources/rdf.icon"/> <title>The Cyber Physical System Watch Ontology</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/CPSWatch#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/CPSWatch#","name":"The Cyber Physical System Watch Ontology", "headline":"Manufacturers and users want to monitore their cyber physical systems. In the Industry 4.0 this is done by observing data from sensors. The problem arises when looking at a system of systems, e.g. a production plant or a whole powertrain of a vessel. Multiple systems describe their data in multiple ways and create the problem of analysing these data together in one system. To tackle this problem and to make transferability of algorithms (ML methods) between different monitoring systems possible, the CPSWatch Ontology is defined to create a top level description of a CPS system.", "dateReleased":"November 21st 2023", "dateModified":"November 21st, 2023", "version":"1.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Björn Ludwig","url":"https://orcid.org/0009-0003-2548-8225"}], "contributor":[{"@type":"Person","name":"Maria Maleshkova"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked.parse(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+ $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ };    $(function(){
+      $("#abstract").load("sections/abstract-en.html"); 
+      $("#introduction").load("sections/introduction-en.html"); 
+      $("#nstable").load("sections/ns-en.html"); 
+      $("#overview").load("sections/overview-en.html"); 
+      $("#description").load("sections/description-en.html"); 
+      $("#references").load("sections/references-en.html"); 
+      $("#crossref").load("sections/crossref-en.html", null, loadHash); 
+    });
+    </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>The Cyber Physical System Watch Ontology</h1>
+<img src="https://github.com/B-Ludwig/CPSWatch/blob/aa184a2003274995672a6dd3ca445b12a5286f52/assets/Logo.png" width="50/">
+<h2>Release: November 21st 2023</h2>
+
+
+<dl>
+<dt>Modified on: November 21st, 2023</dt>
+<dt>This version:</dt>
+<dd><a href="https://w3id.org/CPSWatch/">https://w3id.org/CPSWatch/</a></dd>
+<dt>Latest version:</dt>
+<dd><a href="https://w3id.org/CPSWatch#">https://w3id.org/CPSWatch#</a></dd>
+<dt>Revision:</dt>
+<dd>1.0.0</dd>
+<dt>Issued on:</dt>
+<dd>November 21st, 2023</dd>
+<dt>Authors:</dt>
+<dd><a href="https://orcid.org/0009-0003-2548-8225">Björn Ludwig</a>, (<a href="https://www.hsu-hh.de/en/">Helmut Schmidt University</a>)</dd>
+
+<dt>Contributors:</dt>
+<dd>Maria Maleshkova, (<a href="https://www.hsu-hh.de/en/">Helmut Schmidt University</a>)<a href="mailto:maria.maleshkova@hsu-hh.de">&#9993;</a></dd>
+
+<dt>Publisher:</dt>
+<dd>CPSWatch on Github</dd>
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-https://creativecommons.org/licenses/by/4.0/-blue.svg" alt="https://creativecommons.org/licenses/by/4.0/" /></a>
+</dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd>Björn Ludwig. The Cyber Physical System Watch Ontology. Revision: 1.0.0. Retrieved from: https://w3id.org/CPSWatch/</dd>
+<dt>DOI:</dt>
+<dd><a href="http://dx.doi.org/10.5281/zenodo.10207158 "><img src ="https://img.shields.io/badge/DOI-10.5281/zenodo.10207158 -blue.svg" alt="10.5281/zenodo.10207158 " /></a></dd>
+</dl>
+
+<hr/>
+</div>
+<div class="status">
+<div>
+<span>CPSWatch (stable)</span>
+</div>
+</div>     <div id="abstract"></div>
+<div id="toc"></div>     <div id="introduction"></div>
+	  <div id="nstable"></div>
+     <div id="overview"></div>
+     <div id="description"></div>
+     <div id="crossref"></div>
+     <div id="references"></div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>
