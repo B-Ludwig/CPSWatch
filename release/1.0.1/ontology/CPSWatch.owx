@@ -1,0 +1,882 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="https://w3id.org/CPSWatch"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="https://w3id.org/CPSWatch"
+     versionIRI="https://w3id.org/CPSWatch/1.0.1">
+    <Prefix name="" IRI="https://w3id.org/CPSWatch#"/>
+    <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
+    <Prefix name="org" IRI="http://www.w3.org/ns/org#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="bibo" IRI="http://purl.org/ontology/bibo/"/>
+    <Prefix name="foaf" IRI="http://xmlns.com/foaf/0.1/"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="vann" IRI="http://purl.org/vocab/vann/"/>
+    <Prefix name="skos1" IRI="http://www.w3.org/2008/05/skos#"/>
+    <Prefix name="terms" IRI="http://purl.org/dc/terms/"/>
+    <Prefix name="schema" IRI="https://schema.org/"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <Literal xml:lang="en">This ontology defines a vocabulary for describing cyber physical systems for monitoring purpose. It contains two main concepts: CPSWatch#MonitoredSystem that is a top level description of a System that is modeled and CPSWatch#MonitoringSensor that is a top level description of a sensor used to monitor the CPSWatch#MonitoredSystem. </Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:title"/>
+        <Literal xml:lang="en">The Cyber Physical System Watch Ontology</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:abstract"/>
+        <Literal xml:lang="en">Manufacturers and users want to monitore their cyber physical systems. In the Industry 4.0 this is done by observing data from sensors. The problem arises when looking at a system of systems, e.g. a production plant or a whole powertrain of a vessel. Multiple systems describe their data in multiple ways and create the problem of analysing these data together in one system. To tackle this problem and to make transferability of algorithms (ML methods) between different monitoring systems possible, the CPSWatch Ontology is defined to create a top level description of a CPS system. </Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:created"/>
+        <Literal xml:lang="en">December 7th, 2023</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:creator"/>
+        <IRI>https://orcid.org/0009-0003-2548-8225</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:issued"/>
+        <Literal xml:lang="en">December 7th, 2023</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:license"/>
+        <IRI>https://creativecommons.org/licenses/by/4.0/</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:modified"/>
+        <Literal xml:lang="en">December 7th, 2023</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:publisher"/>
+        <Literal xml:lang="en">CPSWatch on Github</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="bibo:status"/>
+        <Literal xml:lang="en">CPSWatch (stable)</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespacePrefix"/>
+        <Literal xml:lang="en">CPSWatch</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespaceUri"/>
+        <Literal>https://w3id.org/CPSWatch/1.0.1</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal xml:lang="en">1.0.1 release of the CPSWatch Ontology</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal xml:lang="en">1.0.1</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="schema:image"/>
+        <IRI>https://github.com/B-Ludwig/CPSWatch/blob/aa184a2003274995672a6dd3ca445b12a5286f52/assets/Logo.png</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="schema:logo"/>
+        <IRI>https://github.com/B-Ludwig/CPSWatch/blob/aa184a2003274995672a6dd3ca445b12a5286f52/assets/Logo.png</IRI>
+    </Annotation>
+    <Declaration>
+        <Class IRI="http://qudt.org/schema/qudt/Unit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/ns/sosa/ObservableProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="foaf:Organization"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ContinuousMonitoringSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EventMonitoringSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MonitoredSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MonitoringSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NumericMonitoringSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NumericObservation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Observation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Status"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StatusMonitoringSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StatusObservation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="dc:publisher"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.w3.org/ns/sosa/madeBySensor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.w3.org/ns/sosa/observes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasInfluence"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMonitoringSensor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasNegativeCorrelation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPositiveCorrelation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasStates"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasStatus"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSubSystem"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSystemConnection"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasUnit"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.w3.org/ns/sosa/hasSimpleResult"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.w3.org/ns/sosa/resultTime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasDeviationThreshold"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasSampleRate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasSensorID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasSystemID"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Closed"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Critical"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Error"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Off"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ok"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#On"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Open"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ShuttingDown"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Starting"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://www.hsu-hh.de#this"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:title"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="terms:abstract"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="terms:created"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="terms:creator"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="terms:description"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="terms:issued"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="terms:license"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="terms:modified"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="terms:publisher"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="bibo:status"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespacePrefix"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespaceUri"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="owl:cardinality"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="skos1:prefLabel"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="org:memberOf"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="foaf:homepage"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="foaf:name"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="schema:image"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="schema:includedInDataCatalog"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="schema:logo"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#ContinuousMonitoringSensor"/>
+        <Class IRI="#NumericMonitoringSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ContinuousMonitoringSensor"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasSampleRate"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EventMonitoringSensor"/>
+        <Class IRI="#NumericMonitoringSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EventMonitoringSensor"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasDeviationThreshold"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MonitoredSystem"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasSystemID"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MonitoringSensor"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasSensorID"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NumericMonitoringSensor"/>
+        <Class IRI="#MonitoringSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NumericObservation"/>
+        <Class IRI="#Observation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NumericObservation"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://www.w3.org/ns/sosa/hasSimpleResult"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Observation"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.w3.org/ns/sosa/madeBySensor"/>
+            <Class IRI="#MonitoringSensor"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Observation"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://www.w3.org/ns/sosa/resultTime"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StatusMonitoringSensor"/>
+        <Class IRI="#MonitoringSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StatusObservation"/>
+        <Class IRI="#Observation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StatusObservation"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasStatus"/>
+            <Class IRI="#Status"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Status"/>
+        <NamedIndividual IRI="#Closed"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Status"/>
+        <NamedIndividual IRI="#Critical"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Status"/>
+        <NamedIndividual IRI="#Error"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Status"/>
+        <NamedIndividual IRI="#Off"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Status"/>
+        <NamedIndividual IRI="#Ok"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Status"/>
+        <NamedIndividual IRI="#On"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Status"/>
+        <NamedIndividual IRI="#Open"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Status"/>
+        <NamedIndividual IRI="#ShuttingDown"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Status"/>
+        <NamedIndividual IRI="#Starting"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="foaf:Organization"/>
+        <NamedIndividual IRI="https://www.hsu-hh.de#this"/>
+    </ClassAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasNegativeCorrelation"/>
+        <ObjectProperty IRI="#hasInfluence"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPositiveCorrelation"/>
+        <ObjectProperty IRI="#hasInfluence"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSystemConnection"/>
+        <ObjectProperty IRI="#hasSystemConnection"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.w3.org/ns/sosa/madeBySensor"/>
+        <Class IRI="#Observation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.w3.org/ns/sosa/observes"/>
+        <Class IRI="#MonitoringSensor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasInfluence"/>
+        <Class IRI="#MonitoringSensor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasMonitoringSensor"/>
+        <Class IRI="#MonitoredSystem"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasNegativeCorrelation"/>
+        <Class IRI="#MonitoringSensor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPositiveCorrelation"/>
+        <Class IRI="#MonitoringSensor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasStates"/>
+        <Class IRI="#StatusMonitoringSensor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasStatus"/>
+        <Class IRI="#StatusObservation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSubSystem"/>
+        <Class IRI="#MonitoredSystem"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSystemConnection"/>
+        <Class IRI="#MonitoredSystem"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasUnit"/>
+        <Class IRI="#NumericMonitoringSensor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.w3.org/ns/sosa/madeBySensor"/>
+        <Class IRI="#MonitoringSensor"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.w3.org/ns/sosa/observes"/>
+        <Class IRI="http://www.w3.org/ns/sosa/ObservableProperty"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasInfluence"/>
+        <Class IRI="#MonitoringSensor"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasMonitoringSensor"/>
+        <Class IRI="#MonitoringSensor"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasNegativeCorrelation"/>
+        <Class IRI="#MonitoringSensor"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPositiveCorrelation"/>
+        <Class IRI="#MonitoringSensor"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasStates"/>
+        <Class IRI="#Status"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasStatus"/>
+        <Class IRI="#Status"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSubSystem"/>
+        <Class IRI="#MonitoredSystem"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSystemConnection"/>
+        <Class IRI="#MonitoredSystem"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasUnit"/>
+        <Class IRI="http://qudt.org/schema/qudt/Unit"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.w3.org/ns/sosa/hasSimpleResult"/>
+        <Class IRI="#NumericObservation"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.w3.org/ns/sosa/resultTime"/>
+        <Class IRI="#Observation"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasDeviationThreshold"/>
+        <Class IRI="#EventMonitoringSensor"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasSampleRate"/>
+        <Class IRI="#ContinuousMonitoringSensor"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasSensorID"/>
+        <Class IRI="#MonitoringSensor"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasSystemID"/>
+        <Class IRI="#MonitoredSystem"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasDeviationThreshold"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasSampleRate"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasSensorID"/>
+        <Datatype abbreviatedIRI="xsd:unsignedInt"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasSystemID"/>
+        <Datatype abbreviatedIRI="xsd:unsignedInt"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>dc:publisher</AbbreviatedIRI>
+        <Literal xml:lang="en">An entity responsible for making the resource available.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>dc:publisher</AbbreviatedIRI>
+        <AbbreviatedIRI>dc:</AbbreviatedIRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>dc:publisher</AbbreviatedIRI>
+        <Literal xml:lang="en">publisher</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://qudt.org/schema/qudt/Unit</IRI>
+        <Literal>A unit of measure, or unit, is a particular quantity value that has been chosen as a scale for measuring other quantities the same kind (more generally of equivalent dimension). For example, the meter is a quantity of length that has been rigorously defined and standardized by the BIPM (International Board of Weights and Measures). Any measurement of the length can be expressed as a number multiplied by the unit meter. More formally, the value of a physical quantity Q with respect to a unit (U) is expressed as the scalar multiple of a real number (n) and U, as  \\\\(Q = nU\\\\). </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://qudt.org/schema/qudt/Unit</IRI>
+        <Literal>Unit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/ns/sosa/hasSimpleResult</IRI>
+        <Literal>The value of the observations of a CPSWatch#ContinuousMonitoringSensor or CPSWatch#EventMonitoringSensor monitoring sensor are made in.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.w3.org/ns/sosa/hasSimpleResult</IRI>
+        <Literal>hasSimpleResult</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:cardinality"/>
+        <IRI>http://www.w3.org/ns/sosa/hasSimpleResult</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/ns/sosa/madeBySensor</IRI>
+        <Literal xml:lang="en">Connection between a CPSWatch#Observation and a CPSWatch#MonitoringSensor. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.w3.org/ns/sosa/madeBySensor</IRI>
+        <Literal xml:lang="en">madeBySensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/ns/sosa/observes</IRI>
+        <Literal xml:lang="en">Connection between a CPSWatch#MonitoringSensor and a sosa#ObservableProperty. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.w3.org/ns/sosa/observes</IRI>
+        <Literal xml:lang="en">observes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/ns/sosa/resultTime</IRI>
+        <Literal>The dateTime of the observations of a CPSWatch#ContinuousMonitoringSensor or CPSWatch#EventMonitoringSensor monitoring sensor.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.w3.org/ns/sosa/resultTime</IRI>
+        <Literal>resultTime</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:cardinality"/>
+        <IRI>http://www.w3.org/ns/sosa/resultTime</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="org:memberOf"/>
+        <IRI>https://orcid.org/0009-0003-2548-8225</IRI>
+        <IRI>https://www.hsu-hh.de#this</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="foaf:name"/>
+        <IRI>https://orcid.org/0009-0003-2548-8225</IRI>
+        <Literal xml:lang="en">Björn Ludwig</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ContinuousMonitoringSensor</IRI>
+        <Literal>A CPSWatch#ContinuousMonitoringSensor is a sensor that writes data with a fixed sample rate.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ContinuousMonitoringSensor</IRI>
+        <Literal>ContinuousMonitoringSensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#EventMonitoringSensor</IRI>
+        <Literal>A CPSWatch#EventMonitoringSensor is a sensor that writes data if a threshold is surpassed.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#EventMonitoringSensor</IRI>
+        <Literal>EventMonitoringSensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MonitoredSystem</IRI>
+        <Literal>A CPSWatch#MonitoredSystem is a system that is monitored by CPSWatch#MonitoringSensor.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MonitoredSystem</IRI>
+        <Literal>MonitoredSystem</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MonitoringSensor</IRI>
+        <Literal>A CPSWatch#MonitoringSensor is a sensor used to monitor a CPSWatch#MonitoredSystem. It can be of type CPSWatch#ContinuousMonitoringSensor, CPSWatch#EventMonitoringSensor, CPSWatch#StatusMonitoringSensor.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MonitoringSensor</IRI>
+        <Literal>MonitoringSensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#NumericMonitoringSensor</IRI>
+        <Literal>A CPSWatch#NumericMonitoringSensor is a sensor that writes numreric data.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#NumericMonitoringSensor</IRI>
+        <Literal>NumericMonitoringSensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#NumericObservation</IRI>
+        <Literal>A CPSWatch#NumericObservation is an observation made by an CPSWatch#NumericMonitoringSensor.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#NumericObservation</IRI>
+        <Literal>NumericObservation </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Observation</IRI>
+        <Literal>A CPSWatch#Observation is the parent class of CPSWatch#NumericObservation and CPSWatch#StatusObservation that describe the observation made by a CPSWatch#ContinuousMonitoringSensor, CPSWatch#EventMonitoringSensor, or CPSWatch#StatusMonitoringSensor.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Observation</IRI>
+        <Literal>Observation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Status</IRI>
+        <Literal>The status values a CPSWatch#StatusMonitoringSensor can return.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Status</IRI>
+        <Literal>Status</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#StatusMonitoringSensor</IRI>
+        <Literal>A CPSWatch#StatusMonitoringSensor is a sensor that can write specific states.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#StatusMonitoringSensor</IRI>
+        <Literal>StatusMonitoringSensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#StatusObservation</IRI>
+        <Literal>A CPSWatch#StatusObservation is an observation made by an CPSWatch#StatusMonitoringSensor monitoring sensor.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#StatusObservation</IRI>
+        <Literal>StatusObservation </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasDeviationThreshold</IRI>
+        <Literal>Deviation threshold of a CPSWatch:EventMonitoringSensor that needs to be exceeded to save the current value.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasDeviationThreshold</IRI>
+        <Literal>hasDeviationThreshold</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:cardinality"/>
+        <IRI>#hasDeviationThreshold</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasInfluence</IRI>
+        <Literal xml:lang="en">Connection between two CPSWatch:MonitoringSensor to state that the observations of these sensors are connected.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasInfluence</IRI>
+        <Literal xml:lang="en">hasInfluence</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasMonitoringSensor</IRI>
+        <Literal xml:lang="en">Connection from a CPSWatch:MonitoredSystem to a CPSWatch#MonitoringSensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasMonitoringSensor</IRI>
+        <Literal xml:lang="en">hasMonitoringSensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasNegativeCorrelation</IRI>
+        <Literal xml:lang="en">Connection between two CPSWatch:MonitoringSensor to state that the observations of these sensors are with a negative correlation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasNegativeCorrelation</IRI>
+        <Literal xml:lang="en">hasNegativeCorrelation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPositiveCorrelation</IRI>
+        <Literal xml:lang="en">Connection between two CPSWatch:MonitoringSensor to state that the observations of these sensors are with a positive correlation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasPositiveCorrelation</IRI>
+        <Literal xml:lang="en">hasPositiveCorrelation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasSampleRate</IRI>
+        <Literal>Update rate in seconds (s) that the data is stored.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasSampleRate</IRI>
+        <Literal>hasSampleRate</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:cardinality"/>
+        <IRI>#hasSampleRate</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasSensorID</IRI>
+        <Literal xml:lang="en">The unique ID of a CPSWatch#MonitoringSensor.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasSensorID</IRI>
+        <Literal xml:lang="en">hasID</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasStates</IRI>
+        <Literal>The possible states that a CPSWatch#StatusMonitoringSensor can have.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasStates</IRI>
+        <Literal>hasStates</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasStatus</IRI>
+        <Literal>The Status of the observations of a CPSWatch#StatusMonitoringSensor.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasStatus</IRI>
+        <Literal>hasStatus</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:cardinality"/>
+        <IRI>#hasStatus</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasSubSystem</IRI>
+        <Literal xml:lang="en">Connection between two CPSWatch:MonitoredSystem to state that a CPSWatch:MonitoredSystem has a sub system.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasSubSystem</IRI>
+        <Literal xml:lang="en">hasSubSystem</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasSystemConnection</IRI>
+        <Literal xml:lang="en">Connection between two CPSWatch:MonitoredSystem to state that system B is dependent on system A, e.g. CPSWatch:MonitoredSystem A hasSystemConnection CPSWatch:MonitoredSystem B.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasSystemConnection</IRI>
+        <Literal xml:lang="en">hasSystemConnection</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasSystemID</IRI>
+        <Literal xml:lang="en">The unique ID of a CPSWatch#MonitoredSystem.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasSystemID</IRI>
+        <Literal xml:lang="en">hasID</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasUnit</IRI>
+        <Literal>The unit the observations of a CPSWatch#ContinuousMonitoringSensor or CPSWatch#EventMonitoringSensor monitoring sensor are made in.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasUnit</IRI>
+        <Literal>hasUnit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="owl:cardinality"/>
+        <IRI>#hasUnit</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="foaf:homepage"/>
+        <IRI>https://www.hsu-hh.de#this</IRI>
+        <Literal>https://www.hsu-hh.de/en/</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="foaf:name"/>
+        <IRI>https://www.hsu-hh.de#this</IRI>
+        <Literal>Helmut Schmidt University</Literal>
+    </AnnotationAssertion>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty abbreviatedIRI="skos1:prefLabel"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+    </SubAnnotationPropertyOf>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+

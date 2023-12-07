@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:org="http://www.w3.org/ns/org#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:bibo="http://purl.org/ontology/bibo/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:sosa="http://www.w3.org/ns/sosa/"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:skos1="http://www.w3.org/2008/05/skos#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:schema="https://schema.org/"
+     xmlns:CPSWatch="https://w3id.org/CPSWatch#">
+    <Ontology>
+        <imports rdf:resource="https://w3id.org/CPSWatch/"/>
+    </Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/CPSWatch#hasDeviationThreshold -->
+
+    <AnnotationProperty rdf:about="https://w3id.org/CPSWatch#hasDeviationThreshold"/>
+    
+
+
+    <!-- https://w3id.org/CPSWatch#hasID -->
+
+    <AnnotationProperty rdf:about="https://w3id.org/CPSWatch#hasID"/>
+    
+
+
+    <!-- https://w3id.org/CPSWatch#hasInfluence -->
+
+    <AnnotationProperty rdf:about="https://w3id.org/CPSWatch#hasInfluence"/>
+    
+
+
+    <!-- https://w3id.org/CPSWatch#hasMonitoringSensor -->
+
+    <AnnotationProperty rdf:about="https://w3id.org/CPSWatch#hasMonitoringSensor"/>
+    
+
+
+    <!-- https://w3id.org/CPSWatch#hasPositiveCorrelation -->
+
+    <AnnotationProperty rdf:about="https://w3id.org/CPSWatch#hasPositiveCorrelation"/>
+    
+
+
+    <!-- https://w3id.org/CPSWatch#hasSubSystem -->
+
+    <AnnotationProperty rdf:about="https://w3id.org/CPSWatch#hasSubSystem"/>
+    
+
+
+    <!-- https://w3id.org/CPSWatch#hasSystemConnection -->
+
+    <AnnotationProperty rdf:about="https://w3id.org/CPSWatch#hasSystemConnection"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/CPSWatch#ContinuousMonitoringSensor -->
+
+    <Class rdf:about="https://w3id.org/CPSWatch#ContinuousMonitoringSensor"/>
+	
+	
+	
+	<!-- https://w3id.org/CPSWatch#EventMonitoringSensor -->
+
+    <Class rdf:about="https://w3id.org/CPSWatch#EventMonitoringSensor"/>
+    
+
+
+    <!-- https://w3id.org/CPSWatch#MonitoredSystem -->
+
+    <Class rdf:about="https://w3id.org/CPSWatch#MonitoredSystem"/>
+    
+
+
+    <!-- https://w3id.org/CPSWatch#StatusMonitoringSensor -->
+
+    <Class rdf:about="https://w3id.org/CPSWatch#StatusMonitoringSensor"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.org/Engine -->
+
+    <NamedIndividual rdf:about="http://example.org/Engine">
+        <rdf:type rdf:resource="https://w3id.org/CPSWatch#MonitoredSystem"/>
+        <CPSWatch:hasMonitoringSensor rdf:resource="http://example.org/Engine_Flow"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://example.org/Engine_Flow -->
+
+    <NamedIndividual rdf:about="http://example.org/Engine_Flow">
+        <rdf:type rdf:resource="https://w3id.org/CPSWatch#ContinuousMonitoringSensor"/>
+		<sosa:observes rdf:resource="http://example.org/Fuel_Flow"/>
+        <CPSWatch:hasSampleRate rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1</CPSWatch:hasSampleRate>
+        <CPSWatch:hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">22001</CPSWatch:hasID>
+    </NamedIndividual>
+    
+
+
+    <!-- http://example.org/FS_Pump_Flow -->
+
+    <NamedIndividual rdf:about="http://example.org/FS_Pump_Flow">
+        <rdf:type rdf:resource="https://w3id.org/CPSWatch#ContinuousMonitoringSensor"/>
+		<sosa:observes rdf:resource="http://example.org/Fuel_Flow"/>
+        <CPSWatch:hasSampleRate rdf:datatype="http://www.w3.org/2001/XMLSchema#float">10</CPSWatch:hasSampleRate>
+        <CPSWatch:hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">15411</CPSWatch:hasID>
+        <CPSWatch:hasPositiveCorrelation rdf:resource="http://example.org/Engine_Flow"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://example.org/FS_Status -->
+
+    <NamedIndividual rdf:about="http://example.org/FS_Status">
+        <rdf:type rdf:resource="https://w3id.org/CPSWatch#StatusMonitoringSensor"/>
+        <CPSWatch:hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">15401</CPSWatch:hasID>
+        <CPSWatch:hasInfluence rdf:resource="http://example.org/FS_Pump_Flow"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://example.org/FS_Tank_Level -->
+
+    <NamedIndividual rdf:about="http://example.org/FS_Tank_Level">
+        <rdf:type rdf:resource="https://w3id.org/CPSWatch#EventMonitoringSensor"/>
+        <CPSWatch:hasDeviationThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#float">500.0</CPSWatch:hasDeviationThreshold>
+        <CPSWatch:hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">15421</CPSWatch:hasID>
+        <CPSWatch:hasInfluence rdf:resource="http://example.org/FS_Pump_Flow"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://example.org/FuelSystem -->
+
+    <NamedIndividual rdf:about="http://example.org/FuelSystem">
+        <rdf:type rdf:resource="https://w3id.org/CPSWatch#MonitoredSystem"/>
+        <CPSWatch:hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">15400</CPSWatch:hasID>
+        <CPSWatch:hasMonitoringSensor rdf:resource="http://example.org/FS_Status"/>
+        <CPSWatch:hasSubSystem rdf:resource="http://example.org/Pump"/>
+        <CPSWatch:hasSubSystem rdf:resource="http://example.org/Tank"/>
+        <CPSWatch:hasSystemConnection rdf:resource="http://example.org/Engine"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://example.org/Pump -->
+
+    <NamedIndividual rdf:about="http://example.org/Pump">
+        <rdf:type rdf:resource="https://w3id.org/CPSWatch#MonitoredSystem"/>
+        <CPSWatch:hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">15410</CPSWatch:hasID>
+        <CPSWatch:hasMonitoringSensor rdf:resource="http://example.org/FS_Pump_Flow"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://example.org/Tank -->
+
+    <NamedIndividual rdf:about="http://example.org/Tank">
+        <rdf:type rdf:resource="https://w3id.org/CPSWatch#MonitoredSystem"/>
+        <CPSWatch:hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">15420</CPSWatch:hasID>
+        <CPSWatch:hasMonitoringSensor rdf:resource="http://example.org/FS_Tank_Level"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://example.org/Fuel_Flow -->
+
+    <NamedIndividual rdf:about="http://example.org/Fuel_Flow">
+        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+    </NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
