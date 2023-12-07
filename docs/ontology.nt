@@ -1,19 +1,19 @@
 <https://w3id.org/CPSWatch> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<https://w3id.org/CPSWatch> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/CPSWatch/> .
+<https://w3id.org/CPSWatch> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/CPSWatch/1.0.1> .
 <https://w3id.org/CPSWatch> <http://purl.org/dc/elements/1.1/description> "This ontology defines a vocabulary for describing cyber physical systems for monitoring purpose. It contains two main concepts: CPSWatch#MonitoredSystem that is a top level description of a System that is modeled and CPSWatch#MonitoringSensor that is a top level description of a sensor used to monitor the CPSWatch#MonitoredSystem. "@en .
 <https://w3id.org/CPSWatch> <http://purl.org/dc/elements/1.1/title> "The Cyber Physical System Watch Ontology"@en .
 <https://w3id.org/CPSWatch> <http://purl.org/dc/terms/abstract> "Manufacturers and users want to monitore their cyber physical systems. In the Industry 4.0 this is done by observing data from sensors. The problem arises when looking at a system of systems, e.g. a production plant or a whole powertrain of a vessel. Multiple systems describe their data in multiple ways and create the problem of analysing these data together in one system. To tackle this problem and to make transferability of algorithms (ML methods) between different monitoring systems possible, the CPSWatch Ontology is defined to create a top level description of a CPS system. "@en .
-<https://w3id.org/CPSWatch> <http://purl.org/dc/terms/created> "November 21st 2023"@en .
+<https://w3id.org/CPSWatch> <http://purl.org/dc/terms/created> "December 7th, 2023"@en .
 <https://w3id.org/CPSWatch> <http://purl.org/dc/terms/creator> <https://orcid.org/0009-0003-2548-8225> .
-<https://w3id.org/CPSWatch> <http://purl.org/dc/terms/issued> "November 21st, 2023"@en .
+<https://w3id.org/CPSWatch> <http://purl.org/dc/terms/issued> "December 7th, 2023"@en .
 <https://w3id.org/CPSWatch> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
-<https://w3id.org/CPSWatch> <http://purl.org/dc/terms/modified> "November 21st, 2023"@en .
+<https://w3id.org/CPSWatch> <http://purl.org/dc/terms/modified> "December 7th, 2023"@en .
 <https://w3id.org/CPSWatch> <http://purl.org/dc/terms/publisher> "CPSWatch on Github"@en .
 <https://w3id.org/CPSWatch> <http://purl.org/ontology/bibo/status> "CPSWatch (stable)"@en .
 <https://w3id.org/CPSWatch> <http://purl.org/vocab/vann/preferredNamespacePrefix> "CPSWatch"@en .
-<https://w3id.org/CPSWatch> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/CPSWatch#" .
-<https://w3id.org/CPSWatch> <http://www.w3.org/2000/01/rdf-schema#comment> "1.0.0 release of the CPSWatch Ontology"@en .
-<https://w3id.org/CPSWatch> <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0"@en .
+<https://w3id.org/CPSWatch> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/CPSWatch/1.0.1" .
+<https://w3id.org/CPSWatch> <http://www.w3.org/2000/01/rdf-schema#comment> "1.0.1 release of the CPSWatch Ontology"@en .
+<https://w3id.org/CPSWatch> <http://www.w3.org/2002/07/owl#versionInfo> "1.0.1"@en .
 <https://w3id.org/CPSWatch> <https://schema.org/image> <https://github.com/B-Ludwig/CPSWatch/blob/aa184a2003274995672a6dd3ca445b12a5286f52/assets/Logo.png> .
 <https://w3id.org/CPSWatch> <https://schema.org/logo> <https://github.com/B-Ludwig/CPSWatch/blob/aa184a2003274995672a6dd3ca445b12a5286f52/assets/Logo.png> .
 # 
@@ -266,6 +266,7 @@
 _:genid1 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
 _:genid1 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/CPSWatch#hasSampleRate> .
 _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/CPSWatch#ContinuousMonitoringSensor> <http://www.w3.org/2000/01/rdf-schema#comment> "A CPSWatch#ContinuousMonitoringSensor is a sensor that writes data with a fixed sample rate." .
 <https://w3id.org/CPSWatch#ContinuousMonitoringSensor> <http://www.w3.org/2000/01/rdf-schema#label> "ContinuousMonitoringSensor" .
 # 
 # https://w3id.org/CPSWatch#EventMonitoringSensor
@@ -275,6 +276,7 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 _:genid2 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
 _:genid2 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/CPSWatch#hasDeviationThreshold> .
 _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/CPSWatch#EventMonitoringSensor> <http://www.w3.org/2000/01/rdf-schema#comment> "A CPSWatch#EventMonitoringSensor is a sensor that writes data if a threshold is surpassed." .
 <https://w3id.org/CPSWatch#EventMonitoringSensor> <http://www.w3.org/2000/01/rdf-schema#label> "EventMonitoringSensor" .
 # 
 # https://w3id.org/CPSWatch#MonitoredSystem
@@ -298,6 +300,7 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # https://w3id.org/CPSWatch#NumericMonitoringSensor
 <https://w3id.org/CPSWatch#NumericMonitoringSensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/CPSWatch#NumericMonitoringSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/CPSWatch#MonitoringSensor> .
+<https://w3id.org/CPSWatch#NumericMonitoringSensor> <http://www.w3.org/2000/01/rdf-schema#comment> "A CPSWatch#NumericMonitoringSensor is a sensor that writes numreric data." .
 <https://w3id.org/CPSWatch#NumericMonitoringSensor> <http://www.w3.org/2000/01/rdf-schema#label> "NumericMonitoringSensor" .
 # 
 # https://w3id.org/CPSWatch#NumericObservation
@@ -332,6 +335,7 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # https://w3id.org/CPSWatch#StatusMonitoringSensor
 <https://w3id.org/CPSWatch#StatusMonitoringSensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/CPSWatch#StatusMonitoringSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/CPSWatch#MonitoringSensor> .
+<https://w3id.org/CPSWatch#StatusMonitoringSensor> <http://www.w3.org/2000/01/rdf-schema#comment> "A CPSWatch#StatusMonitoringSensor is a sensor that can write specific states." .
 <https://w3id.org/CPSWatch#StatusMonitoringSensor> <http://www.w3.org/2000/01/rdf-schema#label> "StatusMonitoringSensor" .
 # 
 # https://w3id.org/CPSWatch#StatusObservation

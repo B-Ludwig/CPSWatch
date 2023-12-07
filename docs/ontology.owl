@@ -15,21 +15,21 @@
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:schema="https://schema.org/">
     <owl:Ontology rdf:about="https://w3id.org/CPSWatch">
-        <owl:versionIRI rdf:resource="https://w3id.org/CPSWatch/"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/CPSWatch/1.0.1"/>
         <dc:description xml:lang="en">This ontology defines a vocabulary for describing cyber physical systems for monitoring purpose. It contains two main concepts: CPSWatch#MonitoredSystem that is a top level description of a System that is modeled and CPSWatch#MonitoringSensor that is a top level description of a sensor used to monitor the CPSWatch#MonitoredSystem. </dc:description>
         <dc:title xml:lang="en">The Cyber Physical System Watch Ontology</dc:title>
         <terms:abstract xml:lang="en">Manufacturers and users want to monitore their cyber physical systems. In the Industry 4.0 this is done by observing data from sensors. The problem arises when looking at a system of systems, e.g. a production plant or a whole powertrain of a vessel. Multiple systems describe their data in multiple ways and create the problem of analysing these data together in one system. To tackle this problem and to make transferability of algorithms (ML methods) between different monitoring systems possible, the CPSWatch Ontology is defined to create a top level description of a CPS system. </terms:abstract>
-        <terms:created xml:lang="en">November 21st 2023</terms:created>
+        <terms:created xml:lang="en">December 7th, 2023</terms:created>
         <terms:creator rdf:resource="https://orcid.org/0009-0003-2548-8225"/>
-        <terms:issued xml:lang="en">November 21st, 2023</terms:issued>
+        <terms:issued xml:lang="en">December 7th, 2023</terms:issued>
         <terms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-        <terms:modified xml:lang="en">November 21st, 2023</terms:modified>
+        <terms:modified xml:lang="en">December 7th, 2023</terms:modified>
         <terms:publisher xml:lang="en">CPSWatch on Github</terms:publisher>
         <bibo:status xml:lang="en">CPSWatch (stable)</bibo:status>
         <vann:preferredNamespacePrefix xml:lang="en">CPSWatch</vann:preferredNamespacePrefix>
-        <vann:preferredNamespaceUri>https://w3id.org/CPSWatch#</vann:preferredNamespaceUri>
-        <rdfs:comment xml:lang="en">1.0.0 release of the CPSWatch Ontology</rdfs:comment>
-        <owl:versionInfo xml:lang="en">1.0.0</owl:versionInfo>
+        <vann:preferredNamespaceUri>https://w3id.org/CPSWatch/1.0.1</vann:preferredNamespaceUri>
+        <rdfs:comment xml:lang="en">1.0.1 release of the CPSWatch Ontology</rdfs:comment>
+        <owl:versionInfo xml:lang="en">1.0.1</owl:versionInfo>
         <schema:image rdf:resource="https://github.com/B-Ludwig/CPSWatch/blob/aa184a2003274995672a6dd3ca445b12a5286f52/assets/Logo.png"/>
         <schema:logo rdf:resource="https://github.com/B-Ludwig/CPSWatch/blob/aa184a2003274995672a6dd3ca445b12a5286f52/assets/Logo.png"/>
     </owl:Ontology>
@@ -490,6 +490,7 @@
                 <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment>A CPSWatch#ContinuousMonitoringSensor is a sensor that writes data with a fixed sample rate.</rdfs:comment>
         <rdfs:label>ContinuousMonitoringSensor</rdfs:label>
     </owl:Class>
     
@@ -506,6 +507,7 @@
                 <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment>A CPSWatch#EventMonitoringSensor is a sensor that writes data if a threshold is surpassed.</rdfs:comment>
         <rdfs:label>EventMonitoringSensor</rdfs:label>
     </owl:Class>
     
@@ -548,6 +550,7 @@
 
     <owl:Class rdf:about="https://w3id.org/CPSWatch#NumericMonitoringSensor">
         <rdfs:subClassOf rdf:resource="https://w3id.org/CPSWatch#MonitoringSensor"/>
+        <rdfs:comment>A CPSWatch#NumericMonitoringSensor is a sensor that writes numreric data.</rdfs:comment>
         <rdfs:label>NumericMonitoringSensor</rdfs:label>
     </owl:Class>
     
@@ -608,6 +611,7 @@
 
     <owl:Class rdf:about="https://w3id.org/CPSWatch#StatusMonitoringSensor">
         <rdfs:subClassOf rdf:resource="https://w3id.org/CPSWatch#MonitoringSensor"/>
+        <rdfs:comment>A CPSWatch#StatusMonitoringSensor is a sensor that can write specific states.</rdfs:comment>
         <rdfs:label>StatusMonitoringSensor</rdfs:label>
     </owl:Class>
     

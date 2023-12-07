@@ -7,13 +7,13 @@
       "en" : "The Cyber Physical System Watch Ontology"
     },
     "iri" : "https://w3id.org/CPSWatch",
-    "version" : "1.0.0",
+    "version" : "1.0.1",
     "author" : [ "https://orcid.org/0009-0003-2548-8225" ],
     "description" : {
       "en" : "This ontology defines a vocabulary for describing cyber physical systems for monitoring purpose. It contains two main concepts: CPSWatch#MonitoredSystem that is a top level description of a System that is modeled and CPSWatch#MonitoringSensor that is a top level description of a sensor used to monitor the CPSWatch#MonitoredSystem. "
     },
     "comments" : {
-      "en" : "1.0.0 release of the CPSWatch Ontology"
+      "en" : "1.0.1 release of the CPSWatch Ontology"
     },
     "other" : {
       "image" : [ {
@@ -31,7 +31,7 @@
       "created" : [ {
         "identifier" : "created",
         "language" : "en",
-        "value" : "November 21st 2023",
+        "value" : "December 7th, 2023",
         "type" : "label"
       } ],
       "abstract" : [ {
@@ -43,7 +43,7 @@
       "versionInfo" : [ {
         "identifier" : "versionInfo",
         "language" : "en",
-        "value" : "1.0.0",
+        "value" : "1.0.1",
         "type" : "label"
       } ],
       "title" : [ {
@@ -64,6 +64,12 @@
         "value" : "CPSWatch",
         "type" : "label"
       } ],
+      "modified" : [ {
+        "identifier" : "modified",
+        "language" : "en",
+        "value" : "December 7th, 2023",
+        "type" : "label"
+      } ],
       "publisher" : [ {
         "identifier" : "publisher",
         "language" : "en",
@@ -76,22 +82,16 @@
         "value" : "https://github.com/B-Ludwig/CPSWatch/blob/aa184a2003274995672a6dd3ca445b12a5286f52/assets/Logo.png",
         "type" : "iri"
       } ],
-      "modified" : [ {
-        "identifier" : "modified",
-        "language" : "en",
-        "value" : "November 21st, 2023",
-        "type" : "label"
-      } ],
       "preferredNamespaceUri" : [ {
         "identifier" : "preferredNamespaceUri",
         "language" : "undefined",
-        "value" : "https://w3id.org/CPSWatch#",
+        "value" : "https://w3id.org/CPSWatch/1.0.1",
         "type" : "label"
       } ],
       "issued" : [ {
         "identifier" : "issued",
         "language" : "en",
-        "value" : "November 21st, 2023",
+        "value" : "December 7th, 2023",
         "type" : "label"
       } ],
       "status" : [ {
@@ -229,6 +229,9 @@
       "undefined" : "NumericMonitoringSensor"
     },
     "subClasses" : [ "15", "16" ],
+    "comment" : {
+      "undefined" : "A CPSWatch#NumericMonitoringSensor is a sensor that writes numreric data."
+    },
     "id" : "14",
     "superClasses" : [ "4" ]
   }, {
@@ -238,6 +241,9 @@
     "label" : {
       "IRI-based" : "ContinuousMonitoringSensor",
       "undefined" : "ContinuousMonitoringSensor"
+    },
+    "comment" : {
+      "undefined" : "A CPSWatch#ContinuousMonitoringSensor is a sensor that writes data with a fixed sample rate."
     },
     "id" : "15",
     "superClasses" : [ "14" ]
@@ -345,6 +351,9 @@
       "IRI-based" : "EventMonitoringSensor",
       "undefined" : "EventMonitoringSensor"
     },
+    "comment" : {
+      "undefined" : "A CPSWatch#EventMonitoringSensor is a sensor that writes data if a threshold is surpassed."
+    },
     "id" : "16",
     "superClasses" : [ "14" ]
   }, {
@@ -367,6 +376,9 @@
     "label" : {
       "IRI-based" : "StatusMonitoringSensor",
       "undefined" : "StatusMonitoringSensor"
+    },
+    "comment" : {
+      "undefined" : "A CPSWatch#StatusMonitoringSensor is a sensor that can write specific states."
     },
     "id" : "20",
     "superClasses" : [ "4" ]
@@ -415,16 +427,16 @@
         "IRI-based" : "Error"
       }
     }, {
-      "iri" : "https://w3id.org/CPSWatch#Starting",
-      "baseIri" : "https://w3id.org/CPSWatch",
-      "labels" : {
-        "IRI-based" : "Starting"
-      }
-    }, {
       "iri" : "https://w3id.org/CPSWatch#Critical",
       "baseIri" : "https://w3id.org/CPSWatch",
       "labels" : {
         "IRI-based" : "Critical"
+      }
+    }, {
+      "iri" : "https://w3id.org/CPSWatch#Starting",
+      "baseIri" : "https://w3id.org/CPSWatch",
+      "labels" : {
+        "IRI-based" : "Starting"
       }
     }, {
       "iri" : "https://w3id.org/CPSWatch#Closed",
@@ -591,7 +603,7 @@
     "comment" : {
       "en" : "An entity responsible for making the resource available."
     },
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "12"
   }, {
     "iri" : "https://w3id.org/CPSWatch#hasDeviationThreshold",
@@ -656,17 +668,17 @@
   }, {
     "range" : "11",
     "domain" : "25",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "24"
   }, {
     "range" : "4",
     "domain" : "20",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "26"
   }, {
     "range" : "4",
     "domain" : "14",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "27"
   }, {
     "iri" : "https://w3id.org/CPSWatch#hasStatus",
@@ -702,22 +714,22 @@
     "comment" : {
       "en" : "Connection between a CPSWatch#MonitoringSensor and a sosa#ObservableProperty. "
     },
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "30"
   }, {
     "range" : "14",
     "domain" : "15",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "34"
   }, {
     "range" : "14",
     "domain" : "16",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "35"
   }, {
     "range" : "11",
     "domain" : "10",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "36"
   }, {
     "iri" : "https://w3id.org/CPSWatch#hasSensorID",
@@ -784,7 +796,7 @@
     "comment" : {
       "undefined" : "The dateTime of the observations of a CPSWatch#ContinuousMonitoringSensor or CPSWatch#EventMonitoringSensor monitoring sensor."
     },
-    "attributes" : [ "external", "datatype" ],
+    "attributes" : [ "datatype", "external" ],
     "id" : "40"
   }, {
     "iri" : "https://w3id.org/CPSWatch#hasInfluence",
@@ -813,7 +825,7 @@
     "comment" : {
       "en" : "Connection between a CPSWatch#Observation and a CPSWatch#MonitoringSensor. "
     },
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "41"
   }, {
     "iri" : "https://w3id.org/CPSWatch#hasUnit",
@@ -858,7 +870,7 @@
     "comment" : {
       "undefined" : "The value of the observations of a CPSWatch#ContinuousMonitoringSensor or CPSWatch#EventMonitoringSensor monitoring sensor are made in."
     },
-    "attributes" : [ "external", "datatype" ],
+    "attributes" : [ "datatype", "external" ],
     "id" : "43"
   } ]
 }

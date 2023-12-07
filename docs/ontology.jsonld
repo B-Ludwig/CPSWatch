@@ -271,21 +271,21 @@
   } ],
   "http://purl.org/dc/terms/created" : [ {
     "@language" : "en",
-    "@value" : "November 21st 2023"
+    "@value" : "December 7th, 2023"
   } ],
   "http://purl.org/dc/terms/creator" : [ {
     "@id" : "https://orcid.org/0009-0003-2548-8225"
   } ],
   "http://purl.org/dc/terms/issued" : [ {
     "@language" : "en",
-    "@value" : "November 21st, 2023"
+    "@value" : "December 7th, 2023"
   } ],
   "http://purl.org/dc/terms/license" : [ {
     "@id" : "https://creativecommons.org/licenses/by/4.0/"
   } ],
   "http://purl.org/dc/terms/modified" : [ {
     "@language" : "en",
-    "@value" : "November 21st, 2023"
+    "@value" : "December 7th, 2023"
   } ],
   "http://purl.org/dc/terms/publisher" : [ {
     "@language" : "en",
@@ -300,18 +300,18 @@
     "@value" : "CPSWatch"
   } ],
   "http://purl.org/vocab/vann/preferredNamespaceUri" : [ {
-    "@value" : "https://w3id.org/CPSWatch#"
+    "@value" : "https://w3id.org/CPSWatch/1.0.1"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "1.0.0 release of the CPSWatch Ontology"
+    "@value" : "1.0.1 release of the CPSWatch Ontology"
   } ],
   "http://www.w3.org/2002/07/owl#versionIRI" : [ {
-    "@id" : "https://w3id.org/CPSWatch/"
+    "@id" : "https://w3id.org/CPSWatch/1.0.1"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
     "@language" : "en",
-    "@value" : "1.0.0"
+    "@value" : "1.0.1"
   } ],
   "https://schema.org/image" : [ {
     "@id" : "https://github.com/B-Ludwig/CPSWatch/blob/aa184a2003274995672a6dd3ca445b12a5286f52/assets/Logo.png"
@@ -328,6 +328,9 @@
 }, {
   "@id" : "https://w3id.org/CPSWatch#ContinuousMonitoringSensor",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A CPSWatch#ContinuousMonitoringSensor is a sensor that writes data with a fixed sample rate."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "ContinuousMonitoringSensor"
   } ],
@@ -351,6 +354,9 @@
 }, {
   "@id" : "https://w3id.org/CPSWatch#EventMonitoringSensor",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A CPSWatch#EventMonitoringSensor is a sensor that writes data if a threshold is surpassed."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "EventMonitoringSensor"
   } ],
@@ -386,6 +392,9 @@
 }, {
   "@id" : "https://w3id.org/CPSWatch#NumericMonitoringSensor",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A CPSWatch#NumericMonitoringSensor is a sensor that writes numreric data."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "NumericMonitoringSensor"
   } ],
@@ -468,6 +477,9 @@
 }, {
   "@id" : "https://w3id.org/CPSWatch#StatusMonitoringSensor",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A CPSWatch#StatusMonitoringSensor is a sensor that can write specific states."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "StatusMonitoringSensor"
   } ],
