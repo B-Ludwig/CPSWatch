@@ -17,10 +17,10 @@ WHERE {
 
 #### Answer
 
-| <http://example.org/FuelSystem>|
-|<http://example.org/Pump>	|
-|<http://example.org/Tank>	|
-|<http://example.org/Engine> |
+| <http://example.org/FuelSystem> |
+| <http://example.org/Pump> |
+| <http://example.org/Tank> |
+| <http://example.org/Engine> |
 
 ### CQ2: Which systems does Engine depend on?
 
@@ -35,7 +35,7 @@ WHERE {
 
 #### Answer
 
-| <http://example.org/FuelSystem>|
+| <http://example.org/FuelSystem> |
 
 ### CQ3: What sensors does the FuelSystem have?
 
@@ -51,7 +51,7 @@ WHERE {
 
 #### Answer
 
-| <http://example.org/FS_Status>|
+| <http://example.org/FS_Status> |
 
 ### CQ4: What type of sensor is sensor with ID 22001?
 
@@ -86,7 +86,7 @@ WHERE {
 
 #### Answer
 
-|<http://example.org/Fuel_Flow>|
+| <http://example.org/Fuel_Flow> |
 
 ### CQ6: What is the samplerate of sensor FS_Pump_Flow? (only with continuous example)
 
@@ -118,7 +118,7 @@ WHERE {
 
 |5.0|
 
-### CQ8: Which sensor made the observation http://example.org/Observation_678?
+### CQ8: Which sensor made the observation http://example.org/Observation_0?
 
 ```sparq8
 PREFIX cpswatch: <https://w3id.org/CPSWatch#>
@@ -126,13 +126,13 @@ PREFIX sosa: <http://www.w3.org/ns/sosa/>
 
 SELECT ?sensor
 WHERE {
-  <http://example.org/Observation_678> sosa:madeBySensor ?sensor .
+  <http://example.org/Observation_0> sosa:madeBySensor ?sensor .
 }
 ```
 
 #### Answer
 
-|<http://example.org/FS_Pump_Flow>|
+| <http://example.org/FS_Pump_Flow> |
 
 ### CQ9: What sensors influence sensor XZ?
 
@@ -147,7 +147,7 @@ WHERE {
 
 #### Answer
 
-|http://example.org/FS_Pump_Flow|
+| http://example.org/FS_Pump_Flow |
 
 
 ### CQ10: What status states are possible for sensor ?
@@ -163,8 +163,8 @@ WHERE {
 
 #### Answer
 
-|cpswatch:ShuttingDown|
-|cpswatch:Off|
-|cpswatch:Starting|
-|cpswatch:On|
+| cpswatch:ShuttingDown |
+| cpswatch:Off |
+| cpswatch:Starting |
+| cpswatch:On |
 
