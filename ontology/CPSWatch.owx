@@ -6,7 +6,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="https://w3id.org/CPSWatch"
-     versionIRI="https://w3id.org/CPSWatch/">
+     versionIRI="https://w3id.org/CPSWatch/1.0.1">
     <Prefix name="" IRI="https://w3id.org/CPSWatch#"/>
     <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
     <Prefix name="org" IRI="http://www.w3.org/ns/org#"/>
@@ -18,6 +18,7 @@
     <Prefix name="foaf" IRI="http://xmlns.com/foaf/0.1/"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Prefix name="vann" IRI="http://purl.org/vocab/vann/"/>
+    <Prefix name="skos1" IRI="http://www.w3.org/2008/05/skos#"/>
     <Prefix name="terms" IRI="http://purl.org/dc/terms/"/>
     <Prefix name="schema" IRI="https://schema.org/"/>
     <Annotation>
@@ -34,7 +35,7 @@
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="terms:created"/>
-        <Literal xml:lang="en">November 21st 2023</Literal>
+        <Literal xml:lang="en">December 7th, 2023</Literal>
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="terms:creator"/>
@@ -42,7 +43,7 @@
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="terms:issued"/>
-        <Literal xml:lang="en">November 21st, 2023</Literal>
+        <Literal xml:lang="en">December 7th, 2023</Literal>
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="terms:license"/>
@@ -50,7 +51,7 @@
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="terms:modified"/>
-        <Literal xml:lang="en">November 21st, 2023</Literal>
+        <Literal xml:lang="en">December 7th, 2023</Literal>
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="terms:publisher"/>
@@ -66,15 +67,15 @@
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="vann:preferredNamespaceUri"/>
-        <Literal>https://w3id.org/CPSWatch#</Literal>
+        <Literal>https://w3id.org/CPSWatch/1.0.1</Literal>
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <Literal xml:lang="en">1.0.0 release of the CPSWatch Ontology</Literal>
+        <Literal xml:lang="en">1.0.1 release of the CPSWatch Ontology</Literal>
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
-        <Literal xml:lang="en">1.0.0</Literal>
+        <Literal xml:lang="en">1.0.1</Literal>
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="schema:image"/>
@@ -250,7 +251,7 @@
         <AnnotationProperty abbreviatedIRI="owl:cardinality"/>
     </Declaration>
     <Declaration>
-        <AnnotationProperty IRI="http://www.w3.org/2008/05/skos#prefLabel"/>
+        <AnnotationProperty abbreviatedIRI="skos1:prefLabel"/>
     </Declaration>
     <Declaration>
         <AnnotationProperty abbreviatedIRI="org:memberOf"/>
@@ -610,9 +611,19 @@
         <Literal xml:lang="en">Björn Ludwig</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ContinuousMonitoringSensor</IRI>
+        <Literal>A CPSWatch#ContinuousMonitoringSensor is a sensor that writes data with a fixed sample rate.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#ContinuousMonitoringSensor</IRI>
         <Literal>ContinuousMonitoringSensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#EventMonitoringSensor</IRI>
+        <Literal>A CPSWatch#EventMonitoringSensor is a sensor that writes data if a threshold is surpassed.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -638,6 +649,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#MonitoringSensor</IRI>
         <Literal>MonitoringSensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#NumericMonitoringSensor</IRI>
+        <Literal>A CPSWatch#NumericMonitoringSensor is a sensor that writes numreric data.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -673,6 +689,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#Status</IRI>
         <Literal>Status</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#StatusMonitoringSensor</IRI>
+        <Literal>A CPSWatch#StatusMonitoringSensor is a sensor that can write specific states.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -850,7 +871,7 @@
         <Literal>Helmut Schmidt University</Literal>
     </AnnotationAssertion>
     <SubAnnotationPropertyOf>
-        <AnnotationProperty IRI="http://www.w3.org/2008/05/skos#prefLabel"/>
+        <AnnotationProperty abbreviatedIRI="skos1:prefLabel"/>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
     </SubAnnotationPropertyOf>
 </Ontology>

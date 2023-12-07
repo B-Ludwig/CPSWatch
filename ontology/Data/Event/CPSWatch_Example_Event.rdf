@@ -128,6 +128,7 @@
 
     <NamedIndividual rdf:about="http://example.org/Engine_Flow">
         <rdf:type rdf:resource="https://w3id.org/CPSWatch#EventMonitoringSensor"/>
+        <sosa:observes rdf:resource="http://example.org/Fuel_Flow"/>
         <CPSWatch:hasDeviationThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#float">5.0</CPSWatch:hasDeviationThreshold>
         <CPSWatch:hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">22001</CPSWatch:hasID>
     </NamedIndividual>
@@ -138,9 +139,10 @@
 
     <NamedIndividual rdf:about="http://example.org/FS_Pump_Flow">
         <rdf:type rdf:resource="https://w3id.org/CPSWatch#EventMonitoringSensor"/>
+        <sosa:observes rdf:resource="http://example.org/Fuel_Flow"/>
+        <CPSWatch:hasPositiveCorrelation rdf:resource="http://example.org/Engine_Flow"/>
         <CPSWatch:hasDeviationThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#float">5.0</CPSWatch:hasDeviationThreshold>
         <CPSWatch:hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">15411</CPSWatch:hasID>
-        <CPSWatch:hasPositiveCorrelation rdf:resource="http://example.org/Engine_Flow"/>
     </NamedIndividual>
     
 
@@ -149,8 +151,8 @@
 
     <NamedIndividual rdf:about="http://example.org/FS_Status">
         <rdf:type rdf:resource="https://w3id.org/CPSWatch#StatusMonitoringSensor"/>
-        <CPSWatch:hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">15401</CPSWatch:hasID>
         <CPSWatch:hasInfluence rdf:resource="http://example.org/FS_Pump_Flow"/>
+        <CPSWatch:hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">15401</CPSWatch:hasID>
     </NamedIndividual>
     
 
@@ -159,9 +161,9 @@
 
     <NamedIndividual rdf:about="http://example.org/FS_Tank_Level">
         <rdf:type rdf:resource="https://w3id.org/CPSWatch#EventMonitoringSensor"/>
+        <CPSWatch:hasInfluence rdf:resource="http://example.org/FS_Pump_Flow"/>
         <CPSWatch:hasDeviationThreshold rdf:datatype="http://www.w3.org/2001/XMLSchema#float">500.0</CPSWatch:hasDeviationThreshold>
         <CPSWatch:hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">15421</CPSWatch:hasID>
-        <CPSWatch:hasInfluence rdf:resource="http://example.org/FS_Pump_Flow"/>
     </NamedIndividual>
     
 
@@ -170,31 +172,11 @@
 
     <NamedIndividual rdf:about="http://example.org/FuelSystem">
         <rdf:type rdf:resource="https://w3id.org/CPSWatch#MonitoredSystem"/>
-        <CPSWatch:hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">15400</CPSWatch:hasID>
         <CPSWatch:hasMonitoringSensor rdf:resource="http://example.org/FS_Status"/>
         <CPSWatch:hasSubSystem rdf:resource="http://example.org/Pump"/>
         <CPSWatch:hasSubSystem rdf:resource="http://example.org/Tank"/>
         <CPSWatch:hasSystemConnection rdf:resource="http://example.org/Engine"/>
-    </NamedIndividual>
-    
-
-
-    <!-- http://example.org/Pump -->
-
-    <NamedIndividual rdf:about="http://example.org/Pump">
-        <rdf:type rdf:resource="https://w3id.org/CPSWatch#MonitoredSystem"/>
-        <CPSWatch:hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">15410</CPSWatch:hasID>
-        <CPSWatch:hasMonitoringSensor rdf:resource="http://example.org/FS_Pump_Flow"/>
-    </NamedIndividual>
-    
-
-
-    <!-- http://example.org/Tank -->
-
-    <NamedIndividual rdf:about="http://example.org/Tank">
-        <rdf:type rdf:resource="https://w3id.org/CPSWatch#MonitoredSystem"/>
-        <CPSWatch:hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">15420</CPSWatch:hasID>
-        <CPSWatch:hasMonitoringSensor rdf:resource="http://example.org/FS_Tank_Level"/>
+        <CPSWatch:hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">15400</CPSWatch:hasID>
     </NamedIndividual>
     
 
@@ -203,6 +185,26 @@
 
     <NamedIndividual rdf:about="http://example.org/Fuel_Flow">
         <rdf:type rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://example.org/Pump -->
+
+    <NamedIndividual rdf:about="http://example.org/Pump">
+        <rdf:type rdf:resource="https://w3id.org/CPSWatch#MonitoredSystem"/>
+        <CPSWatch:hasMonitoringSensor rdf:resource="http://example.org/FS_Pump_Flow"/>
+        <CPSWatch:hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">15410</CPSWatch:hasID>
+    </NamedIndividual>
+    
+
+
+    <!-- http://example.org/Tank -->
+
+    <NamedIndividual rdf:about="http://example.org/Tank">
+        <rdf:type rdf:resource="https://w3id.org/CPSWatch#MonitoredSystem"/>
+        <CPSWatch:hasMonitoringSensor rdf:resource="http://example.org/FS_Tank_Level"/>
+        <CPSWatch:hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">15420</CPSWatch:hasID>
     </NamedIndividual>
 </rdf:RDF>
 

@@ -134,6 +134,7 @@
 
     <NamedIndividual rdf:about="http://example.org/Engine_Flow">
         <rdf:type rdf:resource="https://w3id.org/CPSWatch#ContinuousMonitoringSensor"/>
+		<sosa:observes rdf:resource="http://example.org/Fuel_Flow"/>
         <CPSWatch:hasSampleRate rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1</CPSWatch:hasSampleRate>
         <CPSWatch:hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">22001</CPSWatch:hasID>
     </NamedIndividual>
@@ -144,6 +145,7 @@
 
     <NamedIndividual rdf:about="http://example.org/FS_Pump_Flow">
         <rdf:type rdf:resource="https://w3id.org/CPSWatch#ContinuousMonitoringSensor"/>
+		<sosa:observes rdf:resource="http://example.org/Fuel_Flow"/>
         <CPSWatch:hasSampleRate rdf:datatype="http://www.w3.org/2001/XMLSchema#float">10</CPSWatch:hasSampleRate>
         <CPSWatch:hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">15411</CPSWatch:hasID>
         <CPSWatch:hasPositiveCorrelation rdf:resource="http://example.org/Engine_Flow"/>
