@@ -1,12 +1,11 @@
 CQ id;CQ;Terms added
 1;Which systems are part of the CPS?;CPSWatch:MonitoredSystem
-2;What systems does system XY depend on?;CPSWatch:hasSystemConnection, CPSWatch:MonitoredSystem
+2;Which systems does system XY depend on?;CPSWatch:hasSystemConnection, CPSWatch:MonitoredSystem
 3;What sensors does system XY have?;CPSWatch:MonitoredSystem, CPSWatch:MonitoringSensor, CPSWatch:hasMonitoringSensor
-4; What type of sensor is sensor with ID XXX?;CPSWatch:MonitoringSensor, CPSWatch:EventMonitoringSensor, CPSWatch:StautsMonitoringSensor, CPSWatch:ContinuousMonitoringSensor
+4;What type of sensor is sensor with ID XXX?;CPSWatch:MonitoringSensor, CPSWatch:EventMonitoringSensor, CPSWatch:StautsMonitoringSensor, CPSWatch:ContinuousMonitoringSensor
 5;Which properties are observed by system XY?;CPSWatch:MonitoredSystem, CPSWatch:MinitoringSensor, 
 6;What is the samplerate of sensor XY;CPSWatch:ContinuousMonitoringSensor, CPSWatch:hasSampleRate
 7;What is the deviation threshold of the sensor XY;CPSWatch:EventMonitoringSensor, CPSWatch:hasDeviationThreshold
-8;What is the upper critical limit of sensor XY?;CPSWatch:NumericMonitoringSensor, hasUpperCriticalLimit
-9;Which sensor made the observation XY?;CPSWatch:Observation, sosa:madeBySensor
-10;What is the relation between sensor XY and sensor XZ?;CPSWatch:MonitoringSensor, CPSWatch:hasInfluecen, CPSWatch:hasPositiveCorrelation, CPSWatch:hasNegativeCorrelation
-11;What status values are possible for sensor XY?;CPSWatch:StatusSensor, CPSWatch:hasStates, CPSWatch:Status
+8;Which sensor made the observation XY?;CPSWatch:Observation, sosa:madeBySensor
+9;What sensors influence sensor XZ?;CPSWatch:MonitoringSensor, CPSWatch:hasInfluecen, CPSWatch:hasPositiveCorrelation, CPSWatch:hasNegativeCorrelation
+10;What status states are possible for sensor XY?;CPSWatch:StatusSensor, CPSWatch:hasStates, CPSWatch:Status
