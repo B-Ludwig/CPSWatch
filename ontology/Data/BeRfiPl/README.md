@@ -1,5 +1,9 @@
-## CPSWatch ontology description for the - AI benchmark for Diagnosis, Reconfiguration & Planning
+## CPSWatch ontology description for AI benchmark for Diagnosis, Reconfiguration & Planning
 
-The original benchmark can be viewed via:
-[GitHub Repository](https://github.com/j-ehrhardt/benchmark-for-diagnosis-reconf-planning?tab=readme-ov-file)  
-[![DOI - Paper](10.1109/ETFA52439.2022.9921546)
+Information about the original benchmark:
+
+Author: [Jonas Ehrhardt](https://orcid.org/0000-0001-5023-839X)
+
+GitHub Repository: [BeRfiPl](https://github.com/j-ehrhardt/benchmark-for-diagnosis-reconf-planning?tab=readme-ov-file)  
+
+Paper: [An AI benchmark for Diagnosis, Reconfiguration & Planning](https://doi.org/10.1109/ETFA52439.2022.9921546)
